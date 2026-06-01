@@ -49,10 +49,5 @@ export default function App() {
     Logout
   </button>
 </div>
-
-          <button onClick={() => setLoggedIn(false)}>Logout</button>
-        </div>
-      )}
-    </div>
   );
 }
