@@ -54,3 +54,29 @@ input {
 .login-btn:hover {
   background: #245ad1;
 }
+.pipeline {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.column {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.column h3 {
+  margin-top: 0;
+  color: #1f3b57;
+}
+
+.lead-card {
+  background: #eef2f7;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
