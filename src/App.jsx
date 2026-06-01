@@ -23,16 +23,13 @@ export default function App() {
     setNewLead("");
   };
 
-  const moveLead = (id) => {
-    setLeads(leads.map(lead => {
-      if (lead.id !== id) return lead;
-
-      const currentIndex = stages.indexOf(lead.status);
-      const nextIndex = (currentIndex + 1) % stages.length;
-
-      return { ...lead, status: stages[nextIndex] };
-    }));
-  };
+ const moveLead = (id, newStatus) => {
+  setLeads(leads.map(lead =>
+    lead.id === id
+      ? { ...lead, status: newStatus }
+      : lead
+  ));
+};
 
   const renderColumn = (status, title) => (
     <div className="column">
