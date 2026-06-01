@@ -40,7 +40,7 @@ export default function App() {
             <input
               value={newLead}
               onChange={(e) => setNewLead(e.target.value)}
-              placeholder="Enter new lead (company name)"
+              placeholder="Add lead..."
             />
             <button onClick={addLead}>
               + Add Lead
