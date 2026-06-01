@@ -1,14 +1,16 @@
-.dashboard {
-  padding: 40px;
-  font-family: Arial;
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #eef2f7;
-  min-height: 100vh;
 }
 
-.card {
+.login-card {
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  padding: 40px;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
 }
