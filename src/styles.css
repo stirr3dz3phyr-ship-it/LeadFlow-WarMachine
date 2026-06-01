@@ -33,16 +33,6 @@ input {
   font-size: 14px;
 }
 
-/* ONLY login inputs */
-.login-card input {
-  width: 100%;
-}
-
-/* ONLY add-lead input */
-.add-lead input {
-  flex: 1;
-  width: auto;
-}
 
 button {
   margin-top: 12px;
