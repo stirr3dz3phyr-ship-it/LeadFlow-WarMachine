@@ -23,27 +23,47 @@ export default function App() {
     setNewLead("");
   };
 
- const moveLead = (id, newStatus) => {
-  setLeads(leads.map(lead =>
-    lead.id === id
-      ? { ...lead, status: newStatus }
-      : lead
-  ));
-};
+  const moveLead = (id, newStatus) => {
+    setLeads(
+      leads.map((lead) =>
+        lead.id === id ? { ...lead, status: newStatus } : lead
+      )
+    );
+  };
 
   const renderColumn = (status, title) => (
     <div className="column">
       <h3>{title}</h3>
 
       {leads
-        .filter(l => l.status === status)
-        .map(l => (
-          <div
-            key={l.id}
-            className="lead-card"
-            onClick={() => moveLead(l.id)}
-          >
-            {l.name}
+        .filter((l) => l.status === status)
+        .map((l) => (
+          <div key={l.id} className="lead-card">
+            <div className="lead-name">{l.name}</div>
+
+            <div className="lead-actions">
+              {status !== "new" && (
+                <button onClick={() => moveLead(l.id, "new")}>New</button>
+              )}
+
+              {status !== "contacted" && (
+                <button onClick={() => moveLead(l.id, "contacted")}>
+                  Contacted
+                </button>
+              )}
+
+              {status !== "qualified" && (
+                <button onClick={() => moveLead(l.id, "qualified")}>
+                  Qualified
+                </button>
+              )}
+
+              {status !== "closed" && (
+                <button onClick={() => moveLead(l.id, "closed")}>
+                  Won/Lost
+                </button>
+              )}
+            </div>
           </div>
         ))}
     </div>
@@ -59,9 +79,7 @@ export default function App() {
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
 
-          <button onClick={() => setLoggedIn(true)}>
-            Login
-          </button>
+          <button onClick={() => setLoggedIn(true)}>Login</button>
         </div>
       ) : (
         <div className="dashboard">
@@ -83,9 +101,7 @@ export default function App() {
             {renderColumn("closed", "Won / Lost")}
           </div>
 
-          <button onClick={() => setLoggedIn(false)}>
-            Logout
-          </button>
+          <button onClick={() => setLoggedIn(false)}>Logout</button>
         </div>
       )}
     </div>
