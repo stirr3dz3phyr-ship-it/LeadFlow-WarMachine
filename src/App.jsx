@@ -3,6 +3,19 @@ import "./styles.css";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [leads, setLeads] = useState([]);
+  const [newLead, setNewLead] = useState("");
+
+  const addLead = () => {
+    if (!newLead.trim()) return;
+
+    setLeads([
+      { name: newLead, status: "new" },
+      ...leads,
+    ]);
+
+    setNewLead("");
+  };
 
   return (
     <div className="app">
@@ -22,17 +35,34 @@ export default function App() {
         <div className="dashboard">
           <h1>War Room Control Center</h1>
 
+          {/* ADD LEAD SECTION */}
+          <div className="add-lead">
+            <input
+              value={newLead}
+              onChange={(e) => setNewLead(e.target.value)}
+              placeholder="Enter new lead (company name)"
+            />
+            <button onClick={addLead}>
+              + Add Lead
+            </button>
+          </div>
+
+          {/* PIPELINE */}
           <div className="pipeline">
 
             <div className="column">
               <h3>New</h3>
-              <div className="lead-card">Company A</div>
-              <div className="lead-card">Company B</div>
+              {leads
+                .filter(l => l.status === "new")
+                .map((l, i) => (
+                  <div key={i} className="lead-card">
+                    {l.name}
+                  </div>
+                ))}
             </div>
 
             <div className="column">
               <h3>Contacted</h3>
-              <div className="lead-card">Company C</div>
             </div>
 
             <div className="column">
