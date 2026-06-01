@@ -19,9 +19,36 @@ export default function App() {
           </button>
         </div>
       ) : (
-        <div className="dashboard">
-          <h1>War Room</h1>
-          <p>Welcome inside the system</p>
+      <div className="dashboard">
+  <h1>War Room Control Center</h1>
+
+  <div className="pipeline">
+
+    <div className="column">
+      <h3>New</h3>
+      <div className="lead-card">Company A</div>
+      <div className="lead-card">Company B</div>
+    </div>
+
+    <div className="column">
+      <h3>Contacted</h3>
+      <div className="lead-card">Company C</div>
+    </div>
+
+    <div className="column">
+      <h3>Qualified</h3>
+    </div>
+
+    <div className="column">
+      <h3>Won / Lost</h3>
+    </div>
+
+  </div>
+
+  <button onClick={() => setLoggedIn(false)}>
+    Logout
+  </button>
+</div>
 
           <button onClick={() => setLoggedIn(false)}>Logout</button>
         </div>
