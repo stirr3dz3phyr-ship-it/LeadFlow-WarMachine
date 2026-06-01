@@ -2,12 +2,34 @@ import { useState } from "react";
 import "./styles.css";
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    alert("Login clicked (next step we add real auth)");
+    setLoggedIn(true);
   };
+
+  if (loggedIn) {
+    return (
+      <div className="dashboard">
+        <h1>War Room</h1>
+
+        <div className="card">
+          <h3>Leads Overview</h3>
+          <ul>
+            <li>🔵 New Lead - Company A</li>
+            <li>🟡 Contacted - Company B</li>
+            <li>🟢 Closed - Company C</li>
+          </ul>
+        </div>
+
+        <button onClick={() => setLoggedIn(false)}>
+          Logout
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="app">
