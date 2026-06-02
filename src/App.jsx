@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.jsx";
+import "./styles.css";
 
 export default function App() {
   const username = "Ragz";
@@ -32,13 +32,12 @@ export default function App() {
     <div className="app">
       <div className="container">
 
-        {/* HEADER */}
         <header className="header">
           <h1>Good Morning, {username} 👋</h1>
           <p className="subtext">Here’s your pipeline for today</p>
         </header>
 
-        {/* KPI CENTER BLOCK */}
+        {/* KPIs */}
         <section className="kpi-grid">
           {kpis.map((k, i) => (
             <div key={i} className="kpi-card">
@@ -48,7 +47,7 @@ export default function App() {
           ))}
         </section>
 
-        {/* FOLLOW-UP ENGINE */}
+        {/* FOLLOW UPS */}
         <section className="panel">
           <div className="panel-title">
             Shall we begin the day by following up on:
@@ -66,8 +65,8 @@ export default function App() {
                 <div className="note">{f.note}</div>
 
                 <div className="meta">
-                  <div>🧠 {f.lastNote}</div>
-                  <div>⏱ {f.timeline}</div>
+                  <div>{f.lastNote}</div>
+                  <div>{f.timeline}</div>
                 </div>
 
                 <div className="actions">
