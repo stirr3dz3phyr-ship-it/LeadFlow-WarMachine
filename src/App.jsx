@@ -1,101 +1,158 @@
-import React from "react";
-import "./styles.css";
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #1c2430;
+}
 
-export default function App() {
-  const username = "Ragz";
+/* APP LAYOUT */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
 
-  const kpis = [
-    { label: "Total Leads", value: 128 },
-    { label: "Hot Leads", value: 14 },
-    { label: "Follow-ups", value: 32 },
-    { label: "Sales", value: 9 },
-  ];
+/* SIDEBAR (RESTORED) */
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e6e9f2;
+  padding: 20px;
+}
 
-  const followUps = [
-    {
-      business: "BluePeak Interiors",
-      contact: "Arjun Mehta",
-      note: "Interested in modular kitchen redesign",
-      lastNote: "Asked for pricing breakup",
-      timeline: "Follow up today",
-    },
-    {
-      business: "Urban Nest Builders",
-      contact: "Priya Sharma",
-      note: "Requested catalog + portfolio",
-      lastNote: "Sent brochure",
-      timeline: "Check response in 24 hrs",
-    },
-  ];
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
 
-  return (
-    <div className="app">
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-      {/* SIDEBAR */}
-      <aside className="sidebar">
-        <div className="logo">LeadFlow</div>
+.nav-item {
+  font-size: 14px;
+  color: #5a6475;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-        <nav className="nav">
-          <div className="nav-item active">Dashboard</div>
-          <div className="nav-item">Leads</div>
-          <div className="nav-item">Follow-ups</div>
-          <div className="nav-item">Analytics</div>
-          <div className="nav-item">Settings</div>
-        </nav>
-      </aside>
+.nav-item.active {
+  background: #eef3ff;
+  color: #2f5cff;
+}
 
-      {/* MAIN AREA */}
-      <main className="main">
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 24px;
+}
 
-        <header className="hero">
-          <h1>Good Morning, {username} 👋</h1>
-          <p>Here’s your pipeline for today</p>
-        </header>
+/* HERO */
+.hero h1 {
+  margin: 0;
+  font-size: 24px;
+}
 
-        {/* KPI CENTER STRIP */}
-        <section className="kpi-strip">
-          {kpis.map((k, i) => (
-            <div key={i} className="kpi-card">
-              <div className="kpi-value">{k.value}</div>
-              <div className="kpi-label">{k.label}</div>
-            </div>
-          ))}
-        </section>
+.hero p {
+  margin-top: 6px;
+  color: #6b768a;
+}
 
-        {/* FOLLOW UPS */}
-        <section className="workspace">
+/* KPI STRIP (CENTERED FEEL) */
+.kpi-strip {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
 
-          <div className="workspace-title">
-            Shall we begin the day by following up on:
-          </div>
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #e6e9f2;
+  border-radius: 12px;
+  padding: 14px;
+  min-width: 140px;
+  text-align: center;
+}
 
-          {followUps.map((f, i) => (
-            <div key={i} className="lead-card">
+.kpi-value {
+  font-size: 20px;
+  font-weight: 600;
+}
 
-              <div className="lead-top">
-                <div>{f.business}</div>
-                <div className="muted">{f.contact}</div>
-              </div>
+.kpi-label {
+  font-size: 12px;
+  color: #6b768a;
+}
 
-              <div className="lead-note">{f.note}</div>
+/* WORKSPACE */
+.workspace {
+  background: #ffffff;
+  border: 1px solid #e6e9f2;
+  border-radius: 16px;
+  padding: 16px;
+}
 
-              <div className="lead-meta">
-                <span>{f.lastNote}</span>
-                <span>{f.timeline}</span>
-              </div>
+.workspace-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b768a;
+  margin-bottom: 14px;
+}
 
-              <div className="lead-actions">
-                <button>WhatsApp Message</button>
-                <button>Refresh Memory</button>
-              </div>
+/* LEAD CARDS */
+.lead-card {
+  border: 1px solid #eef1f7;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #fff;
+}
 
-            </div>
-          ))}
+.lead-top {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
 
-        </section>
+.lead-note {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #2a3445;
+}
 
-      </main>
+.lead-meta {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b768a;
+}
 
-    </div>
-  );
+.lead-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background: #f3f6ff;
+  border: 1px solid #d9e2ff;
+  color: #2f5cff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e9efff;
+}
+
+.muted {
+  color: #6b768a;
+  font-size: 13px;
 }
