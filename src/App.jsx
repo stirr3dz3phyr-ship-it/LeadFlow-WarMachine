@@ -3,10 +3,13 @@ import "./styles.css";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [leads, setLeads] = useState([]);
   const [newLead, setNewLead] = useState("");
 
-  const stages = ["new", "contacted", "qualified", "closed"];
+  const [leads, setLeads] = useState([
+    { id: 1, name: "Raj Interiors", status: "new" },
+    { id: 2, name: "Metro Kitchens", status: "contacted" },
+    { id: 3, name: "WoodCraft Co", status: "qualified" }
+  ]);
 
   const addLead = () => {
     if (!newLead.trim()) return;
@@ -26,14 +29,21 @@ export default function App() {
   const moveLead = (id, newStatus) => {
     setLeads(
       leads.map((lead) =>
-        lead.id === id ? { ...lead, status: newStatus } : lead
+        lead.id === id
+          ? { ...lead, status: newStatus }
+          : lead
       )
     );
   };
 
   const renderColumn = (status, title) => (
     <div className="column">
-      <h3>{title}</h3>
+      <div className="column-header">
+        <h3>{title}</h3>
+        <span>
+          {leads.filter((l) => l.status === status).length}
+        </span>
+      </div>
 
       {leads
         .filter((l) => l.status === status)
@@ -43,23 +53,35 @@ export default function App() {
 
             <div className="lead-actions">
               {status !== "new" && (
-                <button onClick={() => moveLead(l.id, "new")}>New</button>
+                <button onClick={() => moveLead(l.id, "new")}>
+                  New
+                </button>
               )}
 
               {status !== "contacted" && (
-                <button onClick={() => moveLead(l.id, "contacted")}>
+                <button
+                  onClick={() =>
+                    moveLead(l.id, "contacted")
+                  }
+                >
                   Contacted
                 </button>
               )}
 
               {status !== "qualified" && (
-                <button onClick={() => moveLead(l.id, "qualified")}>
+                <button
+                  onClick={() =>
+                    moveLead(l.id, "qualified")
+                  }
+                >
                   Qualified
                 </button>
               )}
 
               {status !== "closed" && (
-                <button onClick={() => moveLead(l.id, "closed")}>
+                <button
+                  onClick={() => moveLead(l.id, "closed")}
+                >
                   Won/Lost
                 </button>
               )}
@@ -72,36 +94,126 @@ export default function App() {
   return (
     <div className="app">
       {!loggedIn ? (
-        <div className="login-card">
-          <h1>LeadFlow</h1>
-          <p className="subtitle">Sign in to enter War Room</p>
+        <div className="login-screen">
+          <div className="login-card">
+            <h1>LeadFlow</h1>
+            <p className="subtitle">
+              War Room Access
+            </p>
 
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+            <input
+              type="email"
+              placeholder="Email"
+            />
 
-          <button onClick={() => setLoggedIn(true)}>Login</button>
+            <input
+              type="password"
+              placeholder="Password"
+            />
+
+            <button
+              onClick={() => setLoggedIn(true)}
+            >
+              Enter War Room
+            </button>
+          </div>
         </div>
       ) : (
-        <div className="dashboard">
-          <h1>War Room Control Center</h1>
+        <div className="dashboard-layout">
 
-          <div className="add-lead">
-            <input
-              value={newLead}
-              onChange={(e) => setNewLead(e.target.value)}
-              placeholder="Company name"
-            />
-            <button onClick={addLead}>+ Add Lead</button>
-          </div>
+          {/* Sidebar */}
+          <aside className="sidebar">
+            <div className="logo-area">
+              <h2>LeadFlow</h2>
+            </div>
 
-          <div className="pipeline">
-            {renderColumn("new", "New")}
-            {renderColumn("contacted", "Contacted")}
-            {renderColumn("qualified", "Qualified")}
-            {renderColumn("closed", "Won / Lost")}
-          </div>
+            <nav>
+              <button>Dashboard</button>
+              <button>Pipeline</button>
+              <button>Leads</button>
+              <button>Reports</button>
+              <button>Settings</button>
+            </nav>
 
-          <button onClick={() => setLoggedIn(false)}>Logout</button>
+            <button
+              className="logout-btn"
+              onClick={() => setLoggedIn(false)}
+            >
+              Logout
+            </button>
+          </aside>
+
+          {/* Main */}
+          <main className="main-content">
+
+            <div className="top-bar">
+              <h1>War Room Control Center</h1>
+
+              <div className="add-lead">
+                <input
+                  value={newLead}
+                  onChange={(e) =>
+                    setNewLead(e.target.value)
+                  }
+                  placeholder="Enter new lead..."
+                />
+
+                <button onClick={addLead}>
+                  + Add Lead
+                </button>
+              </div>
+            </div>
+
+            {/* KPI Cards */}
+            <div className="stats-grid">
+
+              <div className="stat-card">
+                <h3>Total Leads</h3>
+                <p>{leads.length}</p>
+              </div>
+
+              <div className="stat-card">
+                <h3>Hot Leads</h3>
+                <p>
+                  {
+                    leads.filter(
+                      (l) =>
+                        l.status === "qualified"
+                    ).length
+                  }
+                </p>
+              </div>
+
+              <div className="stat-card">
+                <h3>Won / Lost</h3>
+                <p>
+                  {
+                    leads.filter(
+                      (l) =>
+                        l.status === "closed"
+                    ).length
+                  }
+                </p>
+              </div>
+            </div>
+
+            {/* Pipeline */}
+            <div className="pipeline">
+              {renderColumn("new", "New")}
+              {renderColumn(
+                "contacted",
+                "Contacted"
+              )}
+              {renderColumn(
+                "qualified",
+                "Qualified"
+              )}
+              {renderColumn(
+                "closed",
+                "Won / Lost"
+              )}
+            </div>
+          </main>
         </div>
       )}
     </div>
