@@ -1,130 +1,101 @@
-body {
-  margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  background: #070A0F;
-  color: #E7ECF5;
-}
+import React from "react";
+import "./styles.css";
 
-.app {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px;
-}
+export default function App() {
+  const username = "Ragz";
 
-.container {
-  width: 100%;
-  max-width: 980px;
-}
+  const kpis = [
+    { label: "Total Leads", value: 128 },
+    { label: "Hot Leads", value: 14 },
+    { label: "Follow-ups", value: 32 },
+    { label: "Sales", value: 9 },
+  ];
 
-/* HEADER */
-.header h1 {
-  margin: 0;
-  font-size: 26px;
-}
+  const followUps = [
+    {
+      business: "BluePeak Interiors",
+      contact: "Arjun Mehta",
+      note: "Interested in modular kitchen redesign",
+      lastNote: "Asked for pricing breakup",
+      timeline: "Follow up today",
+    },
+    {
+      business: "Urban Nest Builders",
+      contact: "Priya Sharma",
+      note: "Requested catalog + portfolio",
+      lastNote: "Sent brochure",
+      timeline: "Check response in 24 hrs",
+    },
+  ];
 
-.subtext {
-  margin-top: 6px;
-  color: #8B93A7;
-  font-size: 13px;
-}
+  return (
+    <div className="app">
 
-/* KPI */
-.kpi-grid {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
+      {/* SIDEBAR */}
+      <aside className="sidebar">
+        <div className="logo">LeadFlow</div>
 
-.kpi-card {
-  background: #111623;
-  border: 1px solid #232B3D;
-  border-radius: 14px;
-  padding: 18px;
-  text-align: center;
-}
+        <nav className="nav">
+          <div className="nav-item active">Dashboard</div>
+          <div className="nav-item">Leads</div>
+          <div className="nav-item">Follow-ups</div>
+          <div className="nav-item">Analytics</div>
+          <div className="nav-item">Settings</div>
+        </nav>
+      </aside>
 
-.kpi-value {
-  font-size: 22px;
-  font-weight: 600;
-}
+      {/* MAIN AREA */}
+      <main className="main">
 
-.kpi-label {
-  margin-top: 6px;
-  font-size: 12px;
-  color: #8B93A7;
-}
+        <header className="hero">
+          <h1>Good Morning, {username} 👋</h1>
+          <p>Here’s your pipeline for today</p>
+        </header>
 
-/* PANEL */
-.panel {
-  margin-top: 24px;
-  background: #0E1320;
-  border: 1px solid #232B3D;
-  border-radius: 16px;
-  padding: 18px;
-}
+        {/* KPI CENTER STRIP */}
+        <section className="kpi-strip">
+          {kpis.map((k, i) => (
+            <div key={i} className="kpi-card">
+              <div className="kpi-value">{k.value}</div>
+              <div className="kpi-label">{k.label}</div>
+            </div>
+          ))}
+        </section>
 
-.panel-title {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #9AA3B2;
-  margin-bottom: 16px;
-}
+        {/* FOLLOW UPS */}
+        <section className="workspace">
 
-/* FOLLOWUPS */
-.followup-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+          <div className="workspace-title">
+            Shall we begin the day by following up on:
+          </div>
 
-.followup-card {
-  background: #111827;
-  border: 1px solid #242C3D;
-  border-radius: 14px;
-  padding: 16px;
-}
+          {followUps.map((f, i) => (
+            <div key={i} className="lead-card">
 
-.row {
-  display: flex;
-  justify-content: space-between;
-}
+              <div className="lead-top">
+                <div>{f.business}</div>
+                <div className="muted">{f.contact}</div>
+              </div>
 
-.business {
-  font-weight: 500;
-}
+              <div className="lead-note">{f.note}</div>
 
-.contact {
-  color: #9AA3B2;
-}
+              <div className="lead-meta">
+                <span>{f.lastNote}</span>
+                <span>{f.timeline}</span>
+              </div>
 
-.note {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #C9D2E3;
-}
+              <div className="lead-actions">
+                <button>WhatsApp Message</button>
+                <button>Refresh Memory</button>
+              </div>
 
-.meta {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #8B93A7;
-  display: flex;
-  justify-content: space-between;
-}
+            </div>
+          ))}
 
-.actions {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-}
+        </section>
 
-button {
-  background: #1A2233;
-  border: 1px solid #2A3448;
-  color: #E7ECF5;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-size: 12px;
+      </main>
+
+    </div>
+  );
 }
