@@ -1,47 +1,43 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
-  background: #070A0F;
-  color: #E7ECF5;
+
+  /* MUCH stronger contrast shift */
+  background: radial-gradient(circle at top, #0b0f18, #05070c);
+  color: #e9eefc;
 }
 
-.app {
-  min-height: 100vh;
+/* HERO becomes dominant */
+.hero {
+  text-align: center;
+  padding: 40px 16px 20px;
+}
+
+.hero-title {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.hero-sub {
+  margin-top: 6px;
+  color: #93a0b6;
+}
+
+/* KPI STRIP CENTERED */
+.kpi-strip {
   display: flex;
   justify-content: center;
-  padding: 40px 16px;
-}
-
-.container {
-  width: 100%;
-  max-width: 980px;
-}
-
-/* HEADER */
-.header h1 {
-  margin: 0;
-  font-size: 26px;
-}
-
-.subtext {
-  margin-top: 6px;
-  color: #8B93A7;
-  font-size: 13px;
-}
-
-/* KPI */
-.kpi-grid {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
+  padding: 10px 16px 30px;
+  flex-wrap: wrap;
 }
 
-.kpi-card {
-  background: #111623;
-  border: 1px solid #232B3D;
+.kpi {
+  min-width: 140px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px;
   border-radius: 14px;
-  padding: 18px;
   text-align: center;
 }
 
@@ -51,80 +47,67 @@ body {
 }
 
 .kpi-label {
-  margin-top: 6px;
   font-size: 12px;
-  color: #8B93A7;
+  color: #8fa0b8;
 }
 
-/* PANEL */
-.panel {
-  margin-top: 24px;
-  background: #0E1320;
-  border: 1px solid #232B3D;
-  border-radius: 16px;
+/* WORKSPACE = MAIN FOCUS AREA */
+.workspace {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
   padding: 18px;
 }
 
-.panel-title {
+.workspace-title {
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #9AA3B2;
-  margin-bottom: 16px;
+  color: #aab6cc;
+  margin-bottom: 14px;
 }
 
-/* FOLLOWUPS */
-.followup-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.followup-card {
-  background: #111827;
-  border: 1px solid #242C3D;
+/* LEAD CARDS MORE “PRESSED” */
+.lead-card {
+  background: rgba(17, 22, 35, 0.9);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px;
-  padding: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
 }
 
-.row {
+.lead-top {
   display: flex;
   justify-content: space-between;
-}
-
-.business {
   font-weight: 500;
 }
 
-.contact {
-  color: #9AA3B2;
-}
-
-.note {
+.lead-note {
   margin-top: 8px;
   font-size: 13px;
-  color: #C9D2E3;
+  color: #cfd8ee;
 }
 
-.meta {
+.lead-meta {
   margin-top: 10px;
-  font-size: 12px;
-  color: #8B93A7;
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
+  color: #8fa0b8;
 }
 
-.actions {
+.lead-actions {
   margin-top: 12px;
   display: flex;
   gap: 10px;
 }
 
 button {
-  background: #1A2233;
-  border: 1px solid #2A3448;
-  color: #E7ECF5;
+  background: #141b2b;
+  border: 1px solid #2a3550;
+  color: #e9eefc;
   padding: 8px 10px;
   border-radius: 10px;
-  font-size: 12px;
 }
