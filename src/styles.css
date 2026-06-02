@@ -2,82 +2,118 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     font-family: Inter, system-ui, sans-serif;
-    background: #0F1115;
-    color: #E6EAF2;
+    background: radial-gradient(circle at top, #151a26, #0b0d12);
+    color: #e8ecf5;
   }
 
   .app {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 40px 16px;
   }
 
   .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 920px;
   }
 
-  .header h1 {
+  /* TOP BAR */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 20px;
+  }
+
+  .topbar h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 26px;
     letter-spacing: 0.5px;
   }
 
-  .subtext {
-    margin-top: 6px;
-    color: #8B93A7;
+  .topbar p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #9aa3b2;
+  }
+
+  .chip {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: rgba(0,255,170,0.08);
+    border: 1px solid rgba(0,255,170,0.25);
+    color: #2df5b5;
+  }
+
+  /* HERO */
+  .hero {
+    margin: 10px 0 25px;
+  }
+
+  .hero h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .hero p {
+    margin: 6px 0 0;
+    color: #9aa3b2;
     font-size: 14px;
   }
 
-  .card {
-    background: #151922;
-    border: 1px solid #2A3242;
-    border-radius: 14px;
-    padding: 20px;
-    margin-top: 20px;
-    transition: 0.2s ease;
+  /* PANEL */
+  .panel {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(10px);
   }
 
-  .card:hover {
-    transform: translateY(-2px);
+  .panel.soft {
+    opacity: 0.7;
   }
 
-  .card-title {
-    font-size: 13px;
-    color: #8B93A7;
+  .panel-title {
+    font-size: 11px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #9aa3b2;
+    margin-bottom: 12px;
   }
 
-  .greeting {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .action-grid {
-    margin-top: 16px;
+  /* GRID */
+  .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
   }
 
-  .action-card {
-    background: #1B2130;
-    border: 1px solid #2A3242;
-    border-radius: 12px;
+  /* TILE */
+  .tile {
+    position: relative;
     padding: 14px;
+    border-radius: 14px;
+    background: rgba(20, 24, 35, 0.8);
+    border: 1px solid rgba(255,255,255,0.06);
     cursor: pointer;
     transition: 0.2s ease;
+    overflow: hidden;
   }
 
-  .action-card:hover {
-    transform: translateY(-3px);
-    border-color: #3A4660;
+  .tile:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.15);
   }
 
   .icon {
@@ -85,13 +121,44 @@ export default createGlobalStyle`
   }
 
   .label {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 13px;
-    color: #D6DCE8;
+    color: #e8ecf5;
+  }
+
+  .glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.25s ease;
+  }
+
+  .tile:hover .glow {
+    opacity: 1;
+  }
+
+  .tile.hot:hover .glow {
+    background: radial-gradient(circle at top left, rgba(255,60,60,0.25), transparent 60%);
+  }
+
+  .tile.danger:hover .glow {
+    background: radial-gradient(circle at top left, rgba(255,120,120,0.25), transparent 60%);
+  }
+
+  .tile.warning:hover .glow {
+    background: radial-gradient(circle at top left, rgba(255,200,80,0.18), transparent 60%);
+  }
+
+  .tile.info:hover .glow {
+    background: radial-gradient(circle at top left, rgba(80,180,255,0.18), transparent 60%);
+  }
+
+  .tile.neutral:hover .glow {
+    background: radial-gradient(circle at top left, rgba(180,180,180,0.12), transparent 60%);
   }
 
   .muted {
-    color: #6B7280;
-    text-align: center;
+    color: #7b8596;
+    font-size: 13px;
   }
 `;
