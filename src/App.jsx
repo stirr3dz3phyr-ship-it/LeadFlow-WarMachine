@@ -1,158 +1,76 @@
-body {
-  margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  background: #f4f6fb;
-  color: #1c2430;
-}
+import React from "react";
+import "./styles.css";
 
-/* APP LAYOUT */
-.app {
-  display: flex;
-  min-height: 100vh;
-}
+export default function App() {
+  const username = "Ragz";
 
-/* SIDEBAR (RESTORED) */
-.sidebar {
-  width: 220px;
-  background: #ffffff;
-  border-right: 1px solid #e6e9f2;
-  padding: 20px;
-}
+  const kpis = [
+    { label: "Total Leads", value: 128 },
+    { label: "Hot Leads", value: 14 },
+    { label: "Follow-ups", value: 32 },
+    { label: "Sales", value: 9 },
+  ];
 
-.logo {
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 30px;
-}
+  return (
+    <div className="app">
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+      <aside className="sidebar">
+        <div className="logo">LeadFlow</div>
 
-.nav-item {
-  font-size: 14px;
-  color: #5a6475;
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+        <div className="nav">
+          <div>Dashboard</div>
+          <div>Leads</div>
+          <div>Follow-ups</div>
+          <div>Analytics</div>
+          <div>Settings</div>
+        </div>
 
-.nav-item.active {
-  background: #eef3ff;
-  color: #2f5cff;
-}
+        <div className="logout">Logout</div>
+      </aside>
 
-/* MAIN */
-.main {
-  flex: 1;
-  padding: 24px;
-}
+      <main className="main">
 
-/* HERO */
-.hero h1 {
-  margin: 0;
-  font-size: 24px;
-}
+        {/* BIG HERO */}
+        <div className="hero">
+          <div className="hero-title">Good Morning, {username}</div>
+          <div className="hero-sub">Pipeline overview refreshed</div>
+        </div>
 
-.hero p {
-  margin-top: 6px;
-  color: #6b768a;
-}
+        {/* KPI ROW (VERY DISTINCT VISUAL BLOCK) */}
+        <div className="kpi-row">
+          {kpis.map((k, i) => (
+            <div key={i} className="kpi-box">
+              <div className="kpi-num">{k.value}</div>
+              <div className="kpi-text">{k.label}</div>
+            </div>
+          ))}
+        </div>
 
-/* KPI STRIP (CENTERED FEEL) */
-.kpi-strip {
-  display: flex;
-  gap: 12px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
+        {/* FOLLOW UPS */}
+        <div className="section-title">
+          Shall we begin the day by following up on:
+        </div>
 
-.kpi-card {
-  background: #ffffff;
-  border: 1px solid #e6e9f2;
-  border-radius: 12px;
-  padding: 14px;
-  min-width: 140px;
-  text-align: center;
-}
+        <div className="card">
+          <div className="row">
+            <div>BluePeak Interiors</div>
+            <div>Arjun Mehta</div>
+          </div>
 
-.kpi-value {
-  font-size: 20px;
-  font-weight: 600;
-}
+          <div className="note">Interested in modular kitchen redesign</div>
 
-.kpi-label {
-  font-size: 12px;
-  color: #6b768a;
-}
+          <div className="meta">
+            <div>Last: Asked for pricing breakup</div>
+            <div>Today</div>
+          </div>
 
-/* WORKSPACE */
-.workspace {
-  background: #ffffff;
-  border: 1px solid #e6e9f2;
-  border-radius: 16px;
-  padding: 16px;
-}
+          <div className="actions">
+            <button>WhatsApp</button>
+            <button>Refresh Memory</button>
+          </div>
+        </div>
 
-.workspace-title {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #6b768a;
-  margin-bottom: 14px;
-}
-
-/* LEAD CARDS */
-.lead-card {
-  border: 1px solid #eef1f7;
-  border-radius: 12px;
-  padding: 14px;
-  margin-bottom: 12px;
-  background: #fff;
-}
-
-.lead-top {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-}
-
-.lead-note {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #2a3445;
-}
-
-.lead-meta {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #6b768a;
-}
-
-.lead-actions {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  background: #f3f6ff;
-  border: 1px solid #d9e2ff;
-  color: #2f5cff;
-  padding: 8px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #e9efff;
-}
-
-.muted {
-  color: #6b768a;
-  font-size: 13px;
+      </main>
+    </div>
+  );
 }
