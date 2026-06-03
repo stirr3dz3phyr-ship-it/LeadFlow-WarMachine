@@ -1,3 +1,6 @@
+import React from "react";
+import "./styles.css";
+
 export default function App() {
   const username = "Ragz";
 
@@ -17,7 +20,7 @@ export default function App() {
         <div className="logout">Logout</div>
       </aside>
 
-      {/* MAIN (THIS IS REQUIRED) */}
+      {/* MAIN */}
       <main className="main">
 
         <h1>Good Morning, {username} 👋</h1>
@@ -35,9 +38,17 @@ export default function App() {
 
           <div className="followup-list">
 
-            <div className="lead-card">BluePeak Interiors</div>
-            <div className="lead-card">Urban Nest Builders</div>
-            <div className="lead-card">Zenith Constructions</div>
+            <div className="lead-card">
+              BluePeak Interiors — Arjun Mehta
+            </div>
+
+            <div className="lead-card">
+              Urban Nest Builders — Priya Sharma
+            </div>
+
+            <div className="lead-card">
+              Zenith Constructions — Rahul Jain
+            </div>
 
           </div>
 
