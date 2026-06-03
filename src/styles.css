@@ -1,3 +1,7 @@
+html {
+  background: red !important;
+}
+
 * {
   box-sizing: border-box;
 }
