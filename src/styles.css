@@ -258,3 +258,26 @@ h3 {
   font-size: 14px;
   color: #4b5563;
 }
+
+.lead-card {
+  padding: 16px 20px;
+}
+
+.lead-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.lead-bottom {
+  display: flex;
+  gap: 40px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+}
