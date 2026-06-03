@@ -61,8 +61,16 @@ export default function App() {
   <div className="followup-list">
 
     <div className="lead-card">
-      BluePeak Interiors — Arjun Mehta
-    </div>
+
+  <h4>BluePeak Interiors</h4>
+
+  <div>RPC: Arjun Mehta</div>
+
+  <div>Last Contact: 2 Days Ago</div>
+
+  <div>Status: Interested</div>
+
+</div>
 
     <div className="lead-card">
       Urban Nest Builders — Priya Sharma
