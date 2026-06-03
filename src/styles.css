@@ -10,8 +10,9 @@ body {
 
 .app {
   display: flex;
-  height: 100vh;        /* FIXED VIEWPORT */
-  overflow: hidden;     /* STOP GLOBAL SCROLL */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 /* SIDEBAR */
 .sidebar {
@@ -22,7 +23,9 @@ body {
   display: flex;
   flex-direction: column;
 
-  height: 100vh;        /* LOCK SIDEBAR */
+  padding: 20px;
+
+  /* IMPORTANT: DO NOT use 100vh here */
 }
 
 .logo {
@@ -60,10 +63,14 @@ body {
 /* MAIN */
 .main {
   flex: 1;
-  padding: 24px;
+  height: 100vh;
 
-  height: 100vh;        /* CRITICAL */
-  overflow-y: auto;     /* ONLY THIS AREA SCROLLS */
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;   /* ONLY scroll area */
+  padding: 24px;
+  background: #f4f6fb;
 }
 /* HEADER */
 .header h1 {
@@ -157,4 +164,13 @@ button {
   color: #2f5cff;
   padding: 8px 10px;
   border-radius: 10px;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
 }
