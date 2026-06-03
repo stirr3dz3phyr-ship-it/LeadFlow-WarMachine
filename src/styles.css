@@ -21,10 +21,6 @@ html, body {
   background: #eef1f7;
 }
 
-#root {
-  background: red;
-}
-
 /* SIDEBAR */
 .sidebar {
   width: 250px;
