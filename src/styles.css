@@ -206,3 +206,19 @@ padding: 10px;
 
   background: #edf4ff;
 }
+
+.greeting h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+
+.workspace h3 {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #384152;
+  margin-bottom: 16px;
+}
