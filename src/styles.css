@@ -130,6 +130,10 @@ html, body {
   gap: 6px;
 }
 
+.kpi-card:hover {
+  background: black;
+  color: white;
+}
 /* SPACER (RESERVED ZONE FOR GREEN BOX) */
 .spacer {
   height: 40px;
