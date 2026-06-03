@@ -112,7 +112,13 @@ html, body {
   border-radius: 12px;
 
   padding: 16px;
+
   text-align: center;
+
+  min-height: 90px;   /* key fix */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .kpi-card h2 {
