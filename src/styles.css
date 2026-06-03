@@ -174,15 +174,9 @@ padding: 10px;
 }
 
 .lead-card {
-  background: #dce8ff;
-  border: 1px solid #eef1f7;
-  border-radius: 12px;
-
-  padding: 14px;
-
-  min-height: 70px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .kpi-card h1 {
@@ -266,19 +260,12 @@ h3 {
 .lead-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-
-  font-size: 16px;
-  font-weight: 600;
-  color: #1f2937;
 }
-
 .lead-bottom {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-
-  font-size: 14px;
-  font-weight: 500;
-  color: #4b5563;
+  gap: 6px;
+}
+.lead-bottom span {
+  display: block;
 }
