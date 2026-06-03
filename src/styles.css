@@ -10,8 +10,7 @@ body {
 
 .app {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* SIDEBAR */
@@ -23,7 +22,10 @@ body {
 
   display: flex;
   flex-direction: column;
+
   height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
@@ -62,11 +64,9 @@ body {
 .main {
   flex: 1;
   padding: 24px;
-
-  height: 100vh;
-  overflow-y: auto;
+  min-height: 100vh;
+  overflow: visible;
 }
-
 /* HEADER */
 .header h1 {
   margin: 0;
