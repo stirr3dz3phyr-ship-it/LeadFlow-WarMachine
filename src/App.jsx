@@ -22,16 +22,29 @@ export default function App() {
 
       {/* MAIN */}
 {/* FOLLOW UPS TEST */}
+{/* FOLLOW UPS */}
 <div className="workspace">
 
-  <h3>Follow-up Test</h3>
+  <h3>Shall we begin the day by following up on:</h3>
 
   <div className="followup-list">
 
-    <div className="lead-card" style={{ background: "white", padding: 20, border: "2px solid red" }}>
-      <h4>TEST COMPANY</h4>
-      <p>TEST CONTACT</p>
-      <p>IF YOU SEE THIS, FOLLOW UPS WORK</p>
+    <div className="lead-card">
+      <h4>BluePeak Interiors</h4>
+      <p>Arjun Mehta</p>
+      <p>Interested in modular kitchen redesign</p>
+    </div>
+
+    <div className="lead-card">
+      <h4>Urban Nest Builders</h4>
+      <p>Priya Sharma</p>
+      <p>Requested catalog + pricing</p>
+    </div>
+
+    <div className="lead-card">
+      <h4>Zenith Constructions</h4>
+      <p>Rahul Jain</p>
+      <p>Bulk interior supply discussion</p>
     </div>
 
   </div>
