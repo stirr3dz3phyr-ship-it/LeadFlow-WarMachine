@@ -8,17 +8,30 @@ export default function App() {
     <div className="app">
 
       {/* SIDEBAR */}
-      <aside className="sidebar">
-        <div className="logo">LeadFlow</div>
+     <aside className="sidebar">
 
-        <div className="nav">
-          <div className="nav-item">Dashboard</div>
-          <div className="nav-item">Leads</div>
-          <div className="nav-item">Follow-ups</div>
-        </div>
+  {/* LOGO AREA */}
+  <div className="logo-area">
+    <img
+      src="/logo.png"
+      alt="LeadFlow Logo"
+      className="logo-img"
+    />
+  </div>
 
-        <div className="logout">Logout</div>
-      </aside>
+  {/* NAV */}
+  <div className="nav">
+    <div className="nav-item">Dashboard</div>
+    <div className="nav-item">Leads</div>
+    <div className="nav-item">Follow-ups</div>
+  </div>
+
+  {/* LOGOUT */}
+  <div className="logout">
+    Logout
+  </div>
+
+</aside>
 
       {/* MAIN */}
      <main className="main">
