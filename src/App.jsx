@@ -33,57 +33,53 @@ export default function App() {
         <h1>Good Morning, {username} 👋</h1>
 
         {/* KPI GRID */}
-        <div className="kpi-strip">
+       <div className="kpi-grid">
 
-          <div className="kpi-card">
-            <h2>128</h2>
-            <p>Total Leads</p>
-          </div>
+  {/* TOP ROW */}
+  <div className="kpi-card">
+    <h2>128</h2>
+    <p>Total Leads</p>
+  </div>
 
-          <div className="kpi-card">
-            <h2>14</h2>
-            <p>Hot Leads</p>
-          </div>
+  <div className="kpi-card">
+    <h2>14</h2>
+    <p>Hot Leads</p>
+  </div>
 
-          <div className="kpi-card">
-            <h2>32</h2>
-            <p>Follow-ups</p>
-          </div>
+  <div className="kpi-card">
+    <h2>32</h2>
+    <p>Follow-ups</p>
+  </div>
 
-          <div className="kpi-card">
-            <h2>9</h2>
-            <p>Sales</p>
-          </div>
+  <div className="kpi-card">
+    <h2>9</h2>
+    <p>Sales</p>
+  </div>
 
-        </div>
+  {/* BOTTOM ROW */}
+  <div className="kpi-card">
+    <h2>Stage 1</h2>
+    <p>Awareness</p>
+  </div>
 
-        {/* SPACER ZONE (RESERVED FOR GREEN BOX LATER) */}
-        <div className="spacer"></div>
+  <div className="kpi-card">
+    <h2>Stage 2</h2>
+    <p>Interest</p>
+  </div>
 
-        {/* FOLLOW-UP WORKSPACE (TEMPORARY STRUCTURE) */}
-        <div className="workspace">
+  <div className="kpi-card">
+    <h2>Stage 3</h2>
+    <p>Negotiation</p>
+  </div>
 
-          <h3>Shall we begin the day by following up on:</h3>
+  <div className="kpi-card">
+    <h2>Stage 4</h2>
+    <p>Closed</p>
+  </div>
 
-          <div className="followup-list">
+</div>
 
-            <div className="lead-card">
-              BluePeak Interiors — Arjun Mehta
-            </div>
-
-            <div className="lead-card">
-              Urban Nest Builders — Priya Sharma
-            </div>
-
-            <div className="lead-card">
-              Zenith Constructions — Rahul Jain
-            </div>
-
-          </div>
-
-        </div>
-
-      </main>
+    </main>
 
     </div>
   );
