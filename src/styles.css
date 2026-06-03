@@ -275,9 +275,13 @@ h3 {
 
 .lead-bottom {
   display: flex;
-  gap: 40px;
-
+  flex-direction: column;
+  gap: 4px;
   font-size: 14px;
   font-weight: 500;
   color: #4b5563;
+}
+
+.lead-bottom span {
+  display: block;
 }
