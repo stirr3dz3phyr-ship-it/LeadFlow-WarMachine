@@ -1,119 +1,153 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: #e9edf5;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #1c2430;
 }
 
-/* MAIN LAYOUT */
+/* LAYOUT */
 .app {
   display: flex;
   min-height: 100vh;
 }
 
-/* SIDEBAR (MAKE IT CLEAR + STRONG) */
+/* SIDEBAR */
 .sidebar {
   width: 240px;
   background: #ffffff;
-  border-right: 2px solid #d6dbe6;
+  border-right: 1px solid #e5e9f2;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #111;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  flex: 1;
 }
 
 .nav-item {
   font-size: 14px;
-  color: #444;
-}
-
-.nav-item.active {
-  font-weight: bold;
-  color: #2f5cff;
-}
-
-/* LOGOUT FIX (WILL STOP LOOKING LIKE A RANDOM BOX) */
-.logout {
-  margin-top: 30px;
-  padding: 10px;
-  background: #ff4d4d;
-  color: white;
-  text-align: center;
+  color: #556070;
+  padding: 8px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* MAIN AREA */
+.nav-item.active {
+  background: #eef3ff;
+  color: #2f5cff;
+  font-weight: 600;
+}
+
+.logout {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e9f2;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* MAIN */
 .main {
   flex: 1;
   padding: 24px;
 }
 
-/* HERO */
-.hero h1 {
+/* HEADER */
+.header h1 {
   margin: 0;
   font-size: 24px;
 }
 
-.hero p {
-  color: #666;
+.header p {
+  margin-top: 6px;
+  color: #6b768a;
 }
 
-/* KPI ROW (BIG + CLEAR) */
-.kpi-row {
-  display: flex;
+/* KPI STRIP */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin: 20px 0;
 }
 
-.kpi-box {
-  flex: 1;
+.kpi-card {
   background: #ffffff;
-  border: 1px solid #d6dbe6;
-  padding: 18px;
+  border: 1px solid #e5e9f2;
   border-radius: 12px;
+  padding: 16px;
   text-align: center;
 }
 
-.kpi-num {
+.kpi-value {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* SECTION TITLE */
-.section-title {
-  margin: 20px 0 10px;
+.kpi-label {
+  font-size: 12px;
+  color: #6b768a;
+}
+
+/* WORKSPACE */
+.workspace {
+  background: #ffffff;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.workspace-title {
   font-size: 12px;
   text-transform: uppercase;
-  color: #666;
+  letter-spacing: 1px;
+  color: #6b768a;
+  margin-bottom: 14px;
 }
 
-/* FOLLOW UP CARDS (RESTORED VISIBILITY) */
-.card {
-  background: #ffffff;
-  border: 1px solid #d6dbe6;
-  padding: 14px;
+/* FOLLOWUPS */
+.followup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-card {
+  border: 1px solid #eef1f7;
   border-radius: 12px;
-  margin-bottom: 12px;
+  padding: 14px;
+  background: #fff;
 }
 
-.row {
+.lead-top {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.biz {
+  color: #1c2430;
+}
+
+.contact {
+  color: #6b768a;
+  font-weight: 400;
 }
 
 .note {
   margin-top: 8px;
+  font-size: 13px;
 }
 
 .meta {
@@ -121,7 +155,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: #666;
+  color: #6b768a;
 }
 
 .actions {
@@ -131,8 +165,10 @@ body {
 }
 
 button {
+  background: #f3f6ff;
+  border: 1px solid #d9e2ff;
+  color: #2f5cff;
   padding: 8px 10px;
-  border: 1px solid #ccc;
-  background: #f5f5f5;
-  border-radius: 8px;
+  border-radius: 10px;
+  cursor: pointer;
 }
