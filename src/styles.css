@@ -284,6 +284,5 @@ h3 {
 }
 
 .lead-card {
-  display: flex !important;
-  flex-direction: column !important;
+  background: red !important;
 }
