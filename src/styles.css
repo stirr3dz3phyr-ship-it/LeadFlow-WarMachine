@@ -10,22 +10,19 @@ body {
 
 .app {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;        /* FIXED VIEWPORT */
+  overflow: hidden;     /* STOP GLOBAL SCROLL */
 }
-
 /* SIDEBAR */
 .sidebar {
   width: 240px;
   background: #ffffff;
   border-right: 1px solid #e5e9f2;
-  padding: 20px;
 
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
-  position: sticky;
-  top: 0;
+  height: 100vh;        /* LOCK SIDEBAR */
 }
 
 .logo {
@@ -64,8 +61,9 @@ body {
 .main {
   flex: 1;
   padding: 24px;
-  min-height: 100vh;
-  overflow: visible;
+
+  height: 100vh;        /* CRITICAL */
+  overflow-y: auto;     /* ONLY THIS AREA SCROLLS */
 }
 /* HEADER */
 .header h1 {
