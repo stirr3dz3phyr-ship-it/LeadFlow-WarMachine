@@ -23,59 +23,38 @@ export default function App() {
       {/* MAIN */}
       <main className="main">
 
-        <h1>Good Morning, {username} 👋</h1>
+  <h1>Good Morning, Ragz 👋</h1>
 
-       <div className="kpi-strip">
-
-  <div className="kpi-card">
-    <h2>128</h2>
-    <p>Total Leads</p>
+  <div className="kpi-strip">
+    <div className="kpi-card"><h2>128</h2><p>Total Leads</p></div>
+    <div className="kpi-card"><h2>14</h2><p>Hot Leads</p></div>
+    <div className="kpi-card"><h2>32</h2><p>Follow-ups</p></div>
+    <div className="kpi-card"><h2>9</h2><p>Sales</p></div>
   </div>
 
-  <div className="kpi-card">
-    <h2>14</h2>
-    <p>Hot Leads</p>
+  <div className="workspace">
+
+    <h3>Follow-ups</h3>
+
+    <div className="followup-list">
+
+      <div className="lead-card">
+        Business: BluePeak Interiors | RPC: Arjun Mehta | Notes: Modular kitchen interest
+      </div>
+
+      <div className="lead-card">
+        Business: Urban Nest Builders | RPC: Priya Sharma | Notes: Catalog request
+      </div>
+
+      <div className="lead-card">
+        Business: Zenith Constructions | RPC: Rahul Jain | Notes: Bulk supply discussion
+      </div>
+
+    </div>
+
   </div>
 
-  <div className="kpi-card">
-    <h2>32</h2>
-    <p>Follow-ups</p>
-  </div>
-
-  <div className="kpi-card">
-    <h2>9</h2>
-    <p>Sales</p>
-  </div>
-
-</div>
-
-        <div className="workspace">
-
-          <h3>Shall we begin the day by following up on:</h3>
-
-          <div className="followup-list">
-
-            <div className="lead-card">
-  <strong>Business:</strong> BluePeak Interiors <br />
-  <strong>RPC:</strong> Arjun Mehta <br />
-  <strong>Notes:</strong> Interested in modular kitchen redesign
-</div>
-
-<div className="lead-card">
-  <strong>Business:</strong> Urban Nest Builders <br />
-  <strong>RPC:</strong> Priya Sharma <br />
-  <strong>Notes:</strong> Requested catalog + pricing
-</div>
-
-<div className="lead-card">
-  <strong>Business:</strong> Zenith Constructions <br />
-  <strong>RPC:</strong> Rahul Jain <br />
-  <strong>Notes:</strong> Bulk interior supply discussion
-</div>
-
-        </div>
-
-      </main>
+</main>
 
     </div>
   );
