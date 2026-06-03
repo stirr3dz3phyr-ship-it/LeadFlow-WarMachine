@@ -282,3 +282,8 @@ h3 {
   font-weight: 500;
   color: #4b5563;
 }
+
+.lead-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
