@@ -92,8 +92,8 @@ export default function App() {
 <p>Closed Sales</p>
   </div>
 
-  <div className="kpi-card">
-   <h1>$3.6K</h1>
+  <div className="kpi-card special-card">
+       <h1>$3.6K</h1>
 <p>Target Remaining</p>
   </div>
 
