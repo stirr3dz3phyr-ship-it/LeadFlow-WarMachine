@@ -97,14 +97,13 @@ html, body {
   overflow-y: auto;
 }
 
-/* KPI GRID */
-.kpi-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 12px !important;
+/* KPI ROW */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
 
-  width: 100%;
-  background: yellow; /* DEBUG */
+  margin-top: 20px;
 }
 
 .kpi-card {
