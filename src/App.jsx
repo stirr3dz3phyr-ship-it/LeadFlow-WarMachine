@@ -21,10 +21,11 @@ export default function App() {
       </aside>
 
       {/* MAIN */}
-      <main className="main">
+     <main className="main">
 
   <h1>Good Morning, Ragz 👋</h1>
 
+  {/* KPI */}
   <div className="kpi-strip">
     <div className="kpi-card"><h2>128</h2><p>Total Leads</p></div>
     <div className="kpi-card"><h2>14</h2><p>Hot Leads</p></div>
@@ -32,24 +33,21 @@ export default function App() {
     <div className="kpi-card"><h2>9</h2><p>Sales</p></div>
   </div>
 
-  <div className="workspace">
+  {/* FOLLOW UPS - TEST BLOCK */}
+  <div style={{ marginTop: "30px", padding: "10px", background: "#fff", border: "2px solid green" }}>
 
-    <h3>Follow-ups</h3>
+    <h3>FOLLOW UP TEST BLOCK</h3>
 
-    <div className="followup-list">
+    <div style={{ padding: "10px", border: "1px solid red", marginTop: "10px" }}>
+      FOLLOW UP CARD 1
+    </div>
 
-      <div className="lead-card">
-        Business: BluePeak Interiors | RPC: Arjun Mehta | Notes: Modular kitchen interest
-      </div>
+    <div style={{ padding: "10px", border: "1px solid red", marginTop: "10px" }}>
+      FOLLOW UP CARD 2
+    </div>
 
-      <div className="lead-card">
-        Business: Urban Nest Builders | RPC: Priya Sharma | Notes: Catalog request
-      </div>
-
-      <div className="lead-card">
-        Business: Zenith Constructions | RPC: Rahul Jain | Notes: Bulk supply discussion
-      </div>
-
+    <div style={{ padding: "10px", border: "1px solid red", marginTop: "10px" }}>
+      FOLLOW UP CARD 3
     </div>
 
   </div>
