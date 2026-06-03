@@ -29,7 +29,7 @@ export default function App() {
       {/* MAIN CONTENT */}
      <main className="main">
 
-  <h1>Good Morning 👋</h1>
+  <h1>Good Morning Ragz👋</h1>
 
   {/* TOP KPI ROW */}
   <div className="kpi-row">
@@ -57,6 +57,7 @@ export default function App() {
 </div>
 
   {/* FOLLOW-UP LIST (REAL COMPONENT) */}
+       <h3>Shall we begin the day by following up on:</h3>
   <div className="followup-list">
 
     <div className="lead-card">
