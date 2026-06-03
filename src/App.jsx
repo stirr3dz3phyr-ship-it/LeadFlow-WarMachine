@@ -25,12 +25,29 @@ export default function App() {
 
         <h1>Good Morning, {username} 👋</h1>
 
-        <div className="kpi-strip">
-          <div className="kpi-card">Total Leads</div>
-          <div className="kpi-card">Hot Leads</div>
-          <div className="kpi-card">Follow-ups</div>
-          <div className="kpi-card">Sales</div>
-        </div>
+       <div className="kpi-strip">
+
+  <div className="kpi-card">
+    <h2>128</h2>
+    <p>Total Leads</p>
+  </div>
+
+  <div className="kpi-card">
+    <h2>14</h2>
+    <p>Hot Leads</p>
+  </div>
+
+  <div className="kpi-card">
+    <h2>32</h2>
+    <p>Follow-ups</p>
+  </div>
+
+  <div className="kpi-card">
+    <h2>9</h2>
+    <p>Sales</p>
+  </div>
+
+</div>
 
         <div className="workspace">
 
@@ -39,18 +56,22 @@ export default function App() {
           <div className="followup-list">
 
             <div className="lead-card">
-              BluePeak Interiors — Arjun Mehta
-            </div>
+  <strong>Business:</strong> BluePeak Interiors <br />
+  <strong>RPC:</strong> Arjun Mehta <br />
+  <strong>Notes:</strong> Interested in modular kitchen redesign
+</div>
 
-            <div className="lead-card">
-              Urban Nest Builders — Priya Sharma
-            </div>
+<div className="lead-card">
+  <strong>Business:</strong> Urban Nest Builders <br />
+  <strong>RPC:</strong> Priya Sharma <br />
+  <strong>Notes:</strong> Requested catalog + pricing
+</div>
 
-            <div className="lead-card">
-              Zenith Constructions — Rahul Jain
-            </div>
-
-          </div>
+<div className="lead-card">
+  <strong>Business:</strong> Zenith Constructions <br />
+  <strong>RPC:</strong> Rahul Jain <br />
+  <strong>Notes:</strong> Bulk interior supply discussion
+</div>
 
         </div>
 
