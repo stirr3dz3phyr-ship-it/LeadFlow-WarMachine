@@ -64,11 +64,11 @@ export default function App() {
 
   <h4>BluePeak Interiors</h4>
 
-  <div>RPC: Arjun Mehta</div>
-
-  <div>Last Contact: 2 Days Ago</div>
-
-  <div>Status: Interested</div>
+  <div className="lead-info">
+    <span>RPC: Arjun Mehta</span>
+    <span>Last Contact: 2 Days Ago</span>
+    <span>Status: Interested</span>
+  </div>
 
 </div>
 
