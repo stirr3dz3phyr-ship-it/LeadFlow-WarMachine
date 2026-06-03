@@ -33,11 +33,28 @@ export default function App() {
 
   {/* TOP KPI ROW */}
   <div className="kpi-row">
-    <div className="kpi-card">128<br/>Total Leads</div>
-    <div className="kpi-card">14<br/>Hot Leads</div>
-    <div className="kpi-card">32<br/>Follow-ups</div>
-    <div className="kpi-card">9<br/>Sales</div>
+
+  <div className="kpi-card">
+    <h1>47</h1>
+    <p>New Leads - Untouched</p>
   </div>
+
+  <div className="kpi-card">
+    <h1>16</h1>
+    <p>Follow-ups Today</p>
+  </div>
+
+  <div className="kpi-card">
+    <h1>9</h1>
+    <p>RPCs Reached</p>
+  </div>
+
+  <div className="kpi-card">
+    <h1>13</h1>
+    <p>Unreachable / RNR Leads</p>
+  </div>
+
+</div>
 
   {/* FOLLOW-UP LIST (REAL COMPONENT) */}
   <div className="followup-list">
@@ -57,12 +74,29 @@ export default function App() {
   </div>
 
   {/* BOTTOM KPI ROW */}
-  <div className="kpi-row">
-    <div className="kpi-card">Stage 1</div>
-    <div className="kpi-card">Stage 2</div>
-    <div className="kpi-card">Stage 3</div>
-    <div className="kpi-card">Stage 4</div>
+<div className="kpi-row">
+
+  <div className="kpi-card">
+    <h1>12</h1>
+    <p>Warm / Hot Prospects</p>
   </div>
+
+  <div className="kpi-card">
+    <h1>6</h1>
+    <p>RFI Follow-ups</p>
+  </div>
+
+  <div className="kpi-card">
+    <h1>3 | ₹2.4L</h1>
+    <p>Closed Sales</p>
+  </div>
+
+  <div className="kpi-card">
+    <h1>₹3.6L</h1>
+    <p>Target Remaining</p>
+  </div>
+
+</div>
 
 </main>
     </div>
