@@ -1,6 +1,3 @@
-import React from "react";
-import "./styles.css";
-
 export default function App() {
   const username = "Ragz";
 
@@ -20,36 +17,33 @@ export default function App() {
         <div className="logout">Logout</div>
       </aside>
 
-      {/* MAIN */}
-{/* FOLLOW UPS TEST */}
-{/* FOLLOW UPS */}
-<div className="workspace">
+      {/* MAIN (THIS IS REQUIRED) */}
+      <main className="main">
 
-  <h3>Shall we begin the day by following up on:</h3>
+        <h1>Good Morning, {username} 👋</h1>
 
-  <div className="followup-list">
+        <div className="kpi-strip">
+          <div className="kpi-card">Total Leads</div>
+          <div className="kpi-card">Hot Leads</div>
+          <div className="kpi-card">Follow-ups</div>
+          <div className="kpi-card">Sales</div>
+        </div>
 
-    <div className="lead-card">
-      <h4>BluePeak Interiors</h4>
-      <p>Arjun Mehta</p>
-      <p>Interested in modular kitchen redesign</p>
-    </div>
+        <div className="workspace">
 
-    <div className="lead-card">
-      <h4>Urban Nest Builders</h4>
-      <p>Priya Sharma</p>
-      <p>Requested catalog + pricing</p>
-    </div>
+          <h3>Shall we begin the day by following up on:</h3>
 
-    <div className="lead-card">
-      <h4>Zenith Constructions</h4>
-      <p>Rahul Jain</p>
-      <p>Bulk interior supply discussion</p>
-    </div>
+          <div className="followup-list">
 
-  </div>
+            <div className="lead-card">BluePeak Interiors</div>
+            <div className="lead-card">Urban Nest Builders</div>
+            <div className="lead-card">Zenith Constructions</div>
 
-</div>
+          </div>
+
+        </div>
+
+      </main>
 
     </div>
   );
