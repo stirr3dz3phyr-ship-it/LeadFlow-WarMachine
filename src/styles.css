@@ -31,7 +31,7 @@ html, body {
   display: flex;
   flex-direction: column;
 
-  background: wwhite;
+  background: #ffffff;
   border-right: 1px solid #e5e9f2;
 
   padding: 16px;
