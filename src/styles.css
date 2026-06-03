@@ -225,17 +225,36 @@ padding: 10px;
 
 /* GREETING */
 h1 {
-  font-size: 28px;
-  margin: 0 0 12px 0;
+  font-size: 24px;
+  margin: 0 0 16px 0;
 }
 
 /* FOLLOW-UP HEADING */
 h3 {
   font-size: 18px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
 /* MAIN AREA */
 .main {
   padding: 18px;
+}
+
+.lead-card {
+  padding: 18px 20px;
+}
+
+.lead-card h4 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.lead-info {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  color: #4b5563;
 }
