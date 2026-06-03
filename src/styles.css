@@ -222,3 +222,20 @@ padding: 10px;
   color: #384152;
   margin-bottom: 16px;
 }
+
+/* GREETING */
+h1 {
+  font-size: 28px;
+  margin: 0 0 12px 0;
+}
+
+/* FOLLOW-UP HEADING */
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* MAIN AREA */
+.main {
+  padding: 18px;
+}
