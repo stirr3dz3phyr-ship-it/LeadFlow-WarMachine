@@ -1,112 +1,113 @@
-import React from "react";
-import "./styles.css";
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+}
 
-export default function App() {
-  const username = "Ragz";
+#root {
+  height: 100%;
+}
 
-  const kpis = [
-    { label: "Total Leads", value: 128 },
-    { label: "Hot Leads", value: 14 },
-    { label: "Follow-ups", value: 32 },
-    { label: "Sales", value: 9 },
-  ];
+/* APP = SIMPLE 2 COLUMN LAYOUT */
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  const followUps = [
-    {
-      business: "BluePeak Interiors",
-      contact: "Arjun Mehta",
-      note: "Interested in modular kitchen redesign",
-      lastNote: "Asked for pricing breakup",
-      timeline: "Follow up today",
-    },
-    {
-      business: "Urban Nest Builders",
-      contact: "Priya Sharma",
-      note: "Requested catalog + portfolio",
-      lastNote: "Sent brochure",
-      timeline: "Check response in 24 hrs",
-    },
-    {
-      business: "Zenith Constructions",
-      contact: "Rahul Jain",
-      note: "Bulk interior requirement",
-      lastNote: "Initial call done",
-      timeline: "Revisit in 2 days",
-    },
-  ];
+/* SIDEBAR = FIXED LEFT */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e5e9f2;
 
-  return (
-    <div className="app">
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 
-      {/* SIDEBAR */}
-      <aside className="sidebar">
-        <div className="logo">LeadFlow</div>
+/* MAIN = ONLY SCROLL AREA */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 
-        <div className="nav">
-          <div className="nav-item active">Dashboard</div>
-          <div className="nav-item">Leads</div>
-          <div className="nav-item">Follow-ups</div>
-          <div className="nav-item">Analytics</div>
-          <div className="nav-item">Settings</div>
-        </div>
+  overflow-y: auto;
+  padding: 24px;
+}
 
-        <div className="logout">Logout</div>
-      </aside>
+/* LOGO */
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
 
-      {/* MAIN */}
-      <main className="main">
+/* NAV */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-        {/* HEADER */}
-        <div className="header">
-          <h1>Good Morning, {username} 👋</h1>
-          <p>Your pipeline overview</p>
-        </div>
+/* KPI ROW */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
 
-        {/* KPI */}
-        <div className="kpi-strip">
-          {kpis.map((k, i) => (
-            <div key={i} className="kpi-card">
-              <div className="kpi-value">{k.value}</div>
-              <div className="kpi-label">{k.label}</div>
-            </div>
-          ))}
-        </div>
+/* KPI CARD */
+.kpi-card {
+  background: #fff;
+  border: 1px solid #e5e9f2;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
 
-        {/* FOLLOW UPS */}
-        <div className="workspace">
+/* WORKSPACE */
+.workspace {
+  background: #fff;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  padding: 16px;
+}
 
-          <div className="workspace-title">
-            Shall we begin the day by following up on:
-          </div>
+/* FOLLOW UP LIST */
+.followup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
 
-          <div className="followup-list">
-            {followUps.map((f, i) => (
-              <div key={i} className="lead-card">
+/* CARD */
+.lead-card {
+  background: #fff;
+  border: 1px solid #eef1f7;
+  border-radius: 12px;
+  padding: 14px;
+}
 
-                <div className="lead-top">
-                  <div>{f.business}</div>
-                  <div>{f.contact}</div>
-                </div>
+/* BUTTONS */
+button {
+  background: #f3f6ff;
+  border: 1px solid #d9e2ff;
+  color: #2f5cff;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
 
-                <div className="note">{f.note}</div>
-
-                <div className="meta">
-                  <span>{f.lastNote}</span>
-                  <span>{f.timeline}</span>
-                </div>
-
-                <div className="actions">
-                  <button>WhatsApp Message</button>
-                  <button>Refresh Memory</button>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-      </main>
-    </div>
-  );
+/* LOGOUT */
+.logout {
+  margin-top: auto;
+  padding: 10px;
+  background: #2f5cff;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
 }
