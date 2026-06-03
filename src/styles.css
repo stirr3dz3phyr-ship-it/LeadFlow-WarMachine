@@ -132,7 +132,10 @@ padding: 10px;
 
 .kpi-card h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  color: #2f5cff;
 }
 
 .kpi-card {
@@ -184,9 +187,10 @@ padding: 10px;
 
 .kpi-card h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 700;
+  color: #2f5cff;
 }
 
 .kpi-card p {
