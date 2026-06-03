@@ -276,7 +276,7 @@ h3 {
 .lead-bottom {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 40px;
 
   font-size: 14px;
   font-weight: 500;
