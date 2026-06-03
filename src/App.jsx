@@ -8,80 +8,86 @@ export default function App() {
     <div className="app">
 
       {/* SIDEBAR */}
-     <aside className="sidebar">
+      <aside className="sidebar">
 
-  {/* LOGO */}
-  <div className="logo-area">
-    <img
-      src="/logo.png"
-      alt="LeadFlow Logo"
-      className="logo-img"
-    />
-  </div>
+        <div className="logo-area">
+          <img
+            src="/logo.png"
+            alt="LeadFlow Logo"
+            className="logo-img"
+          />
+        </div>
 
-  {/* PRIMARY NAV */}
-  <div className="nav-section">
+        <div className="nav-block">
+          <div className="nav-item">Dashboard</div>
+          <div className="nav-item">Leads</div>
+          <div className="nav-item">Follow-ups</div>
+          <div className="nav-item">Settings</div>
+        </div>
 
-    <div className="nav-item">Dashboard</div>
-    <div className="nav-item">Leads</div>
-    <div className="nav-item">Follow-ups</div>
+        <div className="logout">
+          Logout
+        </div>
 
-  </div>
+      </aside>
 
-  {/* UTILITIES */}
-  <div className="nav-section">
+      {/* MAIN CONTENT */}
+      <main className="main">
 
-    <div className="nav-item">Reports</div>
-    <div className="nav-item">Analytics</div>
+        <h1>Good Morning, {username} 👋</h1>
 
-  </div>
+        {/* KPI GRID */}
+        <div className="kpi-strip">
 
-  {/* SETTINGS (Maya handoff placeholder) */}
-  <div className="nav-section">
+          <div className="kpi-card">
+            <h2>128</h2>
+            <p>Total Leads</p>
+          </div>
 
-    <div className="nav-item">Settings</div>
+          <div className="kpi-card">
+            <h2>14</h2>
+            <p>Hot Leads</p>
+          </div>
 
-  </div>
+          <div className="kpi-card">
+            <h2>32</h2>
+            <p>Follow-ups</p>
+          </div>
 
-  {/* LOGOUT */}
-  <div className="logout">
-    Logout
-  </div>
+          <div className="kpi-card">
+            <h2>9</h2>
+            <p>Sales</p>
+          </div>
 
-</aside>
-      {/* MAIN */}
-     <main className="main">
+        </div>
 
-  <h1>Good Morning, Ragz 👋</h1>
+        {/* SPACER ZONE (RESERVED FOR GREEN BOX LATER) */}
+        <div className="spacer"></div>
 
-  {/* KPI */}
-  <div className="kpi-strip">
-    <div className="kpi-card"><h2>128</h2><p>Total Leads</p></div>
-    <div className="kpi-card"><h2>14</h2><p>Hot Leads</p></div>
-    <div className="kpi-card"><h2>32</h2><p>Follow-ups</p></div>
-    <div className="kpi-card"><h2>9</h2><p>Sales</p></div>
-  </div>
+        {/* FOLLOW-UP WORKSPACE (TEMPORARY STRUCTURE) */}
+        <div className="workspace">
 
-  {/* FOLLOW UPS - TEST BLOCK */}
-  <div style={{ marginTop: "30px", padding: "10px", background: "#fff", border: "2px solid green" }}>
+          <h3>Shall we begin the day by following up on:</h3>
 
-    <h3>FOLLOW UP TEST BLOCK</h3>
+          <div className="followup-list">
 
-    <div style={{ padding: "10px", border: "1px solid red", marginTop: "10px" }}>
-      FOLLOW UP CARD 1
-    </div>
+            <div className="lead-card">
+              BluePeak Interiors — Arjun Mehta
+            </div>
 
-    <div style={{ padding: "10px", border: "1px solid red", marginTop: "10px" }}>
-      FOLLOW UP CARD 2
-    </div>
+            <div className="lead-card">
+              Urban Nest Builders — Priya Sharma
+            </div>
 
-    <div style={{ padding: "10px", border: "1px solid red", marginTop: "10px" }}>
-      FOLLOW UP CARD 3
-    </div>
+            <div className="lead-card">
+              Zenith Constructions — Rahul Jain
+            </div>
 
-  </div>
+          </div>
 
-</main>
+        </div>
+
+      </main>
 
     </div>
   );
