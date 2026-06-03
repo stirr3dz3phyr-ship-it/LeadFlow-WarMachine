@@ -106,7 +106,7 @@ html, body {
 .kpi-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 14px;
 
   margin-top: 20px;
 }
