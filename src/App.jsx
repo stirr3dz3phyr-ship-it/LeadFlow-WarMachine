@@ -21,10 +21,36 @@ export default function App() {
       </aside>
 
       {/* MAIN */}
-      <main className="main">
-        <h1>Good Morning, {username} 👋</h1>
-        <p>Pipeline overview will come here</p>
-      </main>
+  <main className="main">
+
+  <h1>Good Morning, {username} 👋</h1>
+  <p>Pipeline overview</p>
+
+  <div className="kpi-strip">
+
+    <div className="kpi-card">
+      <h2>128</h2>
+      <p>Total Leads</p>
+    </div>
+
+    <div className="kpi-card">
+      <h2>14</h2>
+      <p>Hot Leads</p>
+    </div>
+
+    <div className="kpi-card">
+      <h2>32</h2>
+      <p>Follow-ups</p>
+    </div>
+
+    <div className="kpi-card">
+      <h2>9</h2>
+      <p>Sales</p>
+    </div>
+
+  </div>
+
+</main>
 
     </div>
   );
