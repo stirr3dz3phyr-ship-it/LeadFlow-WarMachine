@@ -87,13 +87,13 @@ export default function App() {
   </div>
 
   <div className="kpi-card">
-    <h1>3 | ₹2.4L</h1>
-    <p>Closed Sales</p>
+   <h1>3 | $2.4K</h1>
+<p>Closed Sales</p>
   </div>
 
   <div className="kpi-card">
-    <h1>₹3.6L</h1>
-    <p>Target Remaining</p>
+   <h1>$3.6K</h1>
+<p>Target Remaining</p>
   </div>
 
 </div>
