@@ -11,11 +11,7 @@ export default function App() {
       <aside className="sidebar">
 
         <div className="logo-area">
-          <img
-            src="/logo.png"
-            alt="LeadFlow Logo"
-            className="logo-img"
-          />
+          <img src="/logo.png" alt="LeadFlow Logo" className="logo-img" />
         </div>
 
         <div className="nav-block">
