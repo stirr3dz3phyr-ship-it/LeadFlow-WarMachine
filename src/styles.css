@@ -7,7 +7,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background: #eef1f7;
+  background: transparent;
 }
 
 /* ROOT LAYOUT */
