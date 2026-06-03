@@ -98,6 +98,7 @@ html, body {
   flex-direction: column;
 
   overflow-y: auto;
+  
   background: #eef1f7;
 }
 
