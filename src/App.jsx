@@ -11,64 +11,100 @@ export default function App() {
     { label: "Sales", value: 9 },
   ];
 
+  const followUps = [
+    {
+      business: "BluePeak Interiors",
+      contact: "Arjun Mehta",
+      note: "Interested in modular kitchen redesign",
+      lastNote: "Asked for pricing breakup",
+      timeline: "Follow up today",
+    },
+    {
+      business: "Urban Nest Builders",
+      contact: "Priya Sharma",
+      note: "Requested catalog + portfolio",
+      lastNote: "Sent brochure",
+      timeline: "Check response in 24 hrs",
+    },
+    {
+      business: "Zenith Constructions",
+      contact: "Rahul Jain",
+      note: "Looking for bulk interior supply",
+      lastNote: "Initial call done",
+      timeline: "Revisit in 2 days",
+    },
+  ];
+
   return (
     <div className="app">
 
+      {/* SIDEBAR */}
       <aside className="sidebar">
         <div className="logo">LeadFlow</div>
 
-        <div className="nav">
-          <div>Dashboard</div>
-          <div>Leads</div>
-          <div>Follow-ups</div>
-          <div>Analytics</div>
-          <div>Settings</div>
-        </div>
+        <nav className="nav">
+          <div className="nav-item active">Dashboard</div>
+          <div className="nav-item">Leads</div>
+          <div className="nav-item">Follow-ups</div>
+          <div className="nav-item">Analytics</div>
+          <div className="nav-item">Settings</div>
+        </nav>
 
         <div className="logout">Logout</div>
       </aside>
 
+      {/* MAIN AREA */}
       <main className="main">
 
-        {/* BIG HERO */}
-        <div className="hero">
-          <div className="hero-title">Good Morning, {username}</div>
-          <div className="hero-sub">Pipeline overview refreshed</div>
-        </div>
+        {/* HEADER */}
+        <header className="header">
+          <h1>Good Morning, {username} 👋</h1>
+          <p>Here’s your pipeline overview</p>
+        </header>
 
-        {/* KPI ROW (VERY DISTINCT VISUAL BLOCK) */}
-        <div className="kpi-row">
+        {/* KPI STRIP */}
+        <section className="kpi-strip">
           {kpis.map((k, i) => (
-            <div key={i} className="kpi-box">
-              <div className="kpi-num">{k.value}</div>
-              <div className="kpi-text">{k.label}</div>
+            <div key={i} className="kpi-card">
+              <div className="kpi-value">{k.value}</div>
+              <div className="kpi-label">{k.label}</div>
             </div>
           ))}
-        </div>
+        </section>
 
         {/* FOLLOW UPS */}
-        <div className="section-title">
-          Shall we begin the day by following up on:
-        </div>
+        <section className="workspace">
 
-        <div className="card">
-          <div className="row">
-            <div>BluePeak Interiors</div>
-            <div>Arjun Mehta</div>
+          <div className="workspace-title">
+            Shall we begin the day by following up on:
           </div>
 
-          <div className="note">Interested in modular kitchen redesign</div>
+          <div className="followup-list">
+            {followUps.map((f, i) => (
+              <div key={i} className="lead-card">
 
-          <div className="meta">
-            <div>Last: Asked for pricing breakup</div>
-            <div>Today</div>
+                <div className="lead-top">
+                  <div className="biz">{f.business}</div>
+                  <div className="contact">{f.contact}</div>
+                </div>
+
+                <div className="note">{f.note}</div>
+
+                <div className="meta">
+                  <span>{f.lastNote}</span>
+                  <span>{f.timeline}</span>
+                </div>
+
+                <div className="actions">
+                  <button>WhatsApp Message</button>
+                  <button>Refresh Memory</button>
+                </div>
+
+              </div>
+            ))}
           </div>
 
-          <div className="actions">
-            <button>WhatsApp</button>
-            <button>Refresh Memory</button>
-          </div>
-        </div>
+        </section>
 
       </main>
     </div>
