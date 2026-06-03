@@ -30,53 +30,28 @@ export default function App() {
       {/* MAIN CONTENT */}
       <main className="main">
 
-        <h1>Good Morning, {username} 👋</h1>
+       <h1>Good Morning 👋</h1>
 
-        {/* KPI GRID */}
-       <div className="kpi-grid">
+{/* TOP KPI ROW */}
+<div className="kpi-row">
+  <div className="kpi-card">128<br/>Total Leads</div>
+  <div className="kpi-card">14<br/>Hot Leads</div>
+  <div className="kpi-card">32<br/>Follow-ups</div>
+  <div className="kpi-card">9<br/>Sales</div>
+</div>
 
-  {/* TOP ROW */}
-  <div className="kpi-card">
-    <h2>128</h2>
-    <p>Total Leads</p>
-  </div>
+{/* GREEN FOLLOW-UP ZONE (PLACEHOLDER FOR NOW) */}
+<div className="followup-zone">
+  <h3>Follow-up Section (Coming Next)</h3>
+</div>
 
-  <div className="kpi-card">
-    <h2>14</h2>
-    <p>Hot Leads</p>
-  </div>
-
-  <div className="kpi-card">
-    <h2>32</h2>
-    <p>Follow-ups</p>
-  </div>
-
-  <div className="kpi-card">
-    <h2>9</h2>
-    <p>Sales</p>
-  </div>
-
-  {/* BOTTOM ROW */}
-  <div className="kpi-card">
-    <h2>Stage 1</h2>
-    <p>Awareness</p>
-  </div>
-
-  <div className="kpi-card">
-    <h2>Stage 2</h2>
-    <p>Interest</p>
-  </div>
-
-  <div className="kpi-card">
-    <h2>Stage 3</h2>
-    <p>Negotiation</p>
-  </div>
-
-  <div className="kpi-card">
-    <h2>Stage 4</h2>
-    <p>Closed</p>
-  </div>
-
+{/* BOTTOM KPI ROW */}
+<div className="kpi-row">
+  <div className="kpi-card">Stage 1</div>
+  <div className="kpi-card">Stage 2</div>
+  <div className="kpi-card">Stage 3</div>
+  <div className="kpi-card">Stage 4</div>
+</div>
 </div>
 
     </main>
