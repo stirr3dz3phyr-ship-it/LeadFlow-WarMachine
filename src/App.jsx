@@ -21,11 +21,12 @@ export default function App() {
       </aside>
 
       {/* MAIN */}
-  <main className="main">
+<main className="main">
 
   <h1>Good Morning, {username} 👋</h1>
   <p>Pipeline overview</p>
 
+  {/* KPI */}
   <div className="kpi-strip">
 
     <div className="kpi-card">
@@ -46,6 +47,35 @@ export default function App() {
     <div className="kpi-card">
       <h2>9</h2>
       <p>Sales</p>
+    </div>
+
+  </div>
+
+  {/* FOLLOW UPS */}
+  <div className="workspace">
+
+    <h3>Shall we begin the day by following up on:</h3>
+
+    <div className="followup-list">
+
+      <div className="lead-card">
+        <h4>BluePeak Interiors</h4>
+        <p>Arjun Mehta</p>
+        <p>Interested in modular kitchen redesign</p>
+      </div>
+
+      <div className="lead-card">
+        <h4>Urban Nest Builders</h4>
+        <p>Priya Sharma</p>
+        <p>Requested catalog + pricing</p>
+      </div>
+
+      <div className="lead-card">
+        <h4>Zenith Constructions</h4>
+        <p>Rahul Jain</p>
+        <p>Bulk interior supply discussion</p>
+      </div>
+
     </div>
 
   </div>
