@@ -62,13 +62,18 @@ export default function App() {
 
     <div className="lead-card">
 
-  <h4>BluePeak Interiors</h4>
-
-  <div className="lead-info">
+  <div className="lead-top">
+    <span>BluePeak Interiors</span>
     <span>RPC: Arjun Mehta</span>
+  </div>
+
+  <div className="lead-bottom">
     <span>Last Contact: 2 Days Ago</span>
     <span>Status: Interested</span>
+    <span>Priority: Warm</span>
   </div>
+
+</div>
 
 </div>
 
