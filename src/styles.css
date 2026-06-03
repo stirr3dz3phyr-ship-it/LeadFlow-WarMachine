@@ -31,7 +31,7 @@ html, body {
   display: flex;
   flex-direction: column;
 
-  background: #ffffff;
+  background: #f3f7ff;
   border-right: 1px solid #e5e9f2;
 
   padding: 16px;
@@ -112,7 +112,7 @@ html, body {
 }
 
 .kpi-card {
-  background: #ffffff;
+ background: #f3f7ff;
   border-radius: 14px;
 
   height: 100px;
@@ -155,7 +155,7 @@ padding: 10px;
 
 /* WORKSPACE */
 .workspace {
-  background: #ffffff;
+  background: #f3f7ff;
   border: 1px solid #e5e9f2;
   border-radius: 14px;
 
