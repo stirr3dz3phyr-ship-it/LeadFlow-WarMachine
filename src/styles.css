@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -6,49 +10,39 @@ html, body {
   background: #f4f6fb;
 }
 
-#root {
-  height: 100%;
-}
-
-/* APP = SIMPLE 2 COLUMN LAYOUT */
+/* ROOT LAYOUT */
 .app {
   display: flex;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
+/* SIDEBAR (LOCKED) */
 .sidebar {
   width: 240px;
-}
-
-.main {
-  flex: 1;
-  padding: 24px;
-  overflow-y: auto;
-}
-
-/* SIDEBAR = FIXED LEFT */
-.sidebar {
-  width: 240px;
+  min-width: 240px;
   background: #ffffff;
   border-right: 1px solid #e5e9f2;
 
   display: flex;
   flex-direction: column;
 
+  padding: 20px;
   height: 100vh;
 }
 
-/* MAIN = ONLY SCROLL AREA */
-.workspace {
-  background: #ffffff;
-  border: 1px solid #e5e9f2;
-  border-radius: 14px;
+/* MAIN AREA (STABLE SCROLL CONTAINER) */
+.main {
+  flex: 1;
+  min-width: 0; /* 🔥 critical fix for flex collapse */
 
-  padding: 16px;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 
-  flex-shrink: 0;   /* 🔥 CRITICAL FIX */
+  padding: 24px;
+
+  overflow-y: auto;
 }
 
 /* LOGO */
@@ -65,17 +59,16 @@ html, body {
   gap: 10px;
 }
 
-/* KPI ROW */
+/* KPI */
 .kpi-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
-/* KPI CARD */
 .kpi-card {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #e5e9f2;
   border-radius: 12px;
   padding: 16px;
@@ -84,18 +77,18 @@ html, body {
 
 /* WORKSPACE */
 .workspace {
-  background: #fff;
+  margin-top: 20px;
+  background: #ffffff;
   border: 1px solid #e5e9f2;
   border-radius: 14px;
   padding: 16px;
 }
 
-/* FOLLOW UP LIST */
+/* FOLLOW UPS */
 .followup-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   margin-top: 10px;
 }
 
@@ -104,20 +97,7 @@ html, body {
   background: #ffffff;
   border: 1px solid #eef1f7;
   border-radius: 12px;
-
   padding: 14px;
-
-  width: 100%;
-  display: block;
-}
-
-/* BUTTONS */
-button {
-  background: #f3f6ff;
-  border: 1px solid #d9e2ff;
-  color: #2f5cff;
-  padding: 8px 10px;
-  border-radius: 10px;
 }
 
 /* LOGOUT */
@@ -128,18 +108,4 @@ button {
   color: white;
   text-align: center;
   border-radius: 10px;
-}
-.kpi-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.kpi-card {
-  background: #fff;
-  border: 1px solid #e5e9f2;
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
 }
