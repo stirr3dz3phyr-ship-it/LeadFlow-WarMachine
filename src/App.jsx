@@ -10,7 +10,7 @@ export default function App() {
       {/* SIDEBAR */}
      <aside className="sidebar">
 
-  {/* LOGO AREA */}
+  {/* LOGO */}
   <div className="logo-area">
     <img
       src="/logo.png"
@@ -19,11 +19,28 @@ export default function App() {
     />
   </div>
 
-  {/* NAV */}
-  <div className="nav">
+  {/* PRIMARY NAV */}
+  <div className="nav-section">
+
     <div className="nav-item">Dashboard</div>
     <div className="nav-item">Leads</div>
     <div className="nav-item">Follow-ups</div>
+
+  </div>
+
+  {/* UTILITIES */}
+  <div className="nav-section">
+
+    <div className="nav-item">Reports</div>
+    <div className="nav-item">Analytics</div>
+
+  </div>
+
+  {/* SETTINGS (Maya handoff placeholder) */}
+  <div className="nav-section">
+
+    <div className="nav-item">Settings</div>
+
   </div>
 
   {/* LOGOUT */}
@@ -32,7 +49,6 @@ export default function App() {
   </div>
 
 </aside>
-
       {/* MAIN */}
      <main className="main">
 
