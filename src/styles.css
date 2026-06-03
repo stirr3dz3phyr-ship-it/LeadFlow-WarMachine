@@ -123,11 +123,11 @@ html, body {
 
 .kpi-card h2 {
   margin: 0;
+  font-size: 20px;
 }
 
-.kpi-card p {
-  margin: 6px 0 0;
-  color: #666;
+.kpi-card {
+  gap: 6px;
 }
 
 /* SPACER (RESERVED ZONE FOR GREEN BOX) */
@@ -158,4 +158,8 @@ html, body {
   border-radius: 12px;
 
   padding: 14px;
+
+  min-height: 70px;
+  display: flex;
+  align-items: center;
 }
