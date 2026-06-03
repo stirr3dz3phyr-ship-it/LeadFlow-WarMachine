@@ -1,78 +1,87 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: #eef1f7;
+  background: #e9edf5;
 }
 
-/* LAYOUT */
+/* MAIN LAYOUT */
 .app {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* SIDEBAR (VERY OBVIOUS) */
+/* SIDEBAR (MAKE IT CLEAR + STRONG) */
 .sidebar {
   width: 240px;
-  background: white;
-  border-right: 2px solid #d9e1ee;
+  background: #ffffff;
+  border-right: 2px solid #d6dbe6;
   padding: 20px;
 }
 
 .logo {
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  color: #111;
 }
 
-.nav div {
-  margin: 12px 0;
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-item {
+  font-size: 14px;
   color: #444;
 }
 
-.logout {
-  margin-top: 40px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
+.nav-item.active {
+  font-weight: bold;
+  color: #2f5cff;
 }
 
-/* MAIN */
+/* LOGOUT FIX (WILL STOP LOOKING LIKE A RANDOM BOX) */
+.logout {
+  margin-top: 30px;
+  padding: 10px;
+  background: #ff4d4d;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MAIN AREA */
 .main {
   flex: 1;
   padding: 24px;
 }
 
-/* HERO (BIG VISUAL CHANGE) */
-.hero {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+/* HERO */
+.hero h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
-.hero-title {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.hero-sub {
+.hero p {
   color: #666;
 }
 
-/* KPI ROW (CLEARLY DIFFERENT) */
+/* KPI ROW (BIG + CLEAR) */
 .kpi-row {
   display: flex;
   gap: 12px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .kpi-box {
   flex: 1;
-  background: white;
+  background: #ffffff;
+  border: 1px solid #d6dbe6;
   padding: 18px;
   border-radius: 12px;
   text-align: center;
-  border: 1px solid #d9e1ee;
 }
 
 .kpi-num {
@@ -80,25 +89,21 @@ body {
   font-weight: bold;
 }
 
-.kpi-text {
-  font-size: 12px;
-  color: #666;
-}
-
 /* SECTION TITLE */
 .section-title {
   margin: 20px 0 10px;
   font-size: 12px;
   text-transform: uppercase;
-  color: #777;
+  color: #666;
 }
 
-/* CARD */
+/* FOLLOW UP CARDS (RESTORED VISIBILITY) */
 .card {
-  background: white;
-  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d6dbe6;
+  padding: 14px;
   border-radius: 12px;
-  border: 1px solid #d9e1ee;
+  margin-bottom: 12px;
 }
 
 .row {
@@ -127,7 +132,7 @@ body {
 
 button {
   padding: 8px 10px;
-  border: 1px solid #bbb;
-  background: #f5f7fb;
-  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  border-radius: 8px;
 }
