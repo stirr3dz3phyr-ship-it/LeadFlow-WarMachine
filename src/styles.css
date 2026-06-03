@@ -113,17 +113,20 @@ html, body {
 
 .kpi-card {
   background: #ffffff;
-  border: 1px solid #e5e9f2;
-  border-radius: 12px;
+  border-radius: 14px;
 
-  padding: 16px;
+  padding: 18px;
 
-  text-align: center;
+  min-height: 90px;
 
-  min-height: 90px;   /* key fix */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.05),
+    0 8px 20px rgba(0,0,0,0.04);
 }
 
 .kpi-card h2 {
