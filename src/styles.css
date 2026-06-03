@@ -98,12 +98,13 @@ html, body {
 }
 
 /* KPI GRID */
-.kpi-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+.kpi-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
 
-  margin-top: 20px;
+  width: 100%;
+  background: yellow; /* DEBUG */
 }
 
 .kpi-card {
