@@ -28,34 +28,44 @@ export default function App() {
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="main">
+     <main className="main">
 
-       <h1>Good Morning 👋</h1>
+  <h1>Good Morning 👋</h1>
 
-{/* TOP KPI ROW */}
-<div className="kpi-row">
-  <div className="kpi-card">128<br/>Total Leads</div>
-  <div className="kpi-card">14<br/>Hot Leads</div>
-  <div className="kpi-card">32<br/>Follow-ups</div>
-  <div className="kpi-card">9<br/>Sales</div>
-</div>
+  {/* TOP KPI ROW */}
+  <div className="kpi-row">
+    <div className="kpi-card">128<br/>Total Leads</div>
+    <div className="kpi-card">14<br/>Hot Leads</div>
+    <div className="kpi-card">32<br/>Follow-ups</div>
+    <div className="kpi-card">9<br/>Sales</div>
+  </div>
 
-{/* GREEN FOLLOW-UP ZONE (PLACEHOLDER FOR NOW) */}
-<div className="followup-zone">
-  <h3>Follow-up Section (Coming Next)</h3>
-</div>
+  {/* FOLLOW-UP LIST (REAL COMPONENT) */}
+  <div className="followup-list">
 
-{/* BOTTOM KPI ROW */}
-<div className="kpi-row">
-  <div className="kpi-card">Stage 1</div>
-  <div className="kpi-card">Stage 2</div>
-  <div className="kpi-card">Stage 3</div>
-  <div className="kpi-card">Stage 4</div>
-</div>
-</div>
+    <div className="lead-card">
+      BluePeak Interiors — Arjun Mehta
+    </div>
 
-    </main>
+    <div className="lead-card">
+      Urban Nest Builders — Priya Sharma
+    </div>
 
+    <div className="lead-card">
+      Zenith Constructions — Rahul Jain
+    </div>
+
+  </div>
+
+  {/* BOTTOM KPI ROW */}
+  <div className="kpi-row">
+    <div className="kpi-card">Stage 1</div>
+    <div className="kpi-card">Stage 2</div>
+    <div className="kpi-card">Stage 3</div>
+    <div className="kpi-card">Stage 4</div>
+  </div>
+
+</main>
     </div>
   );
 }
