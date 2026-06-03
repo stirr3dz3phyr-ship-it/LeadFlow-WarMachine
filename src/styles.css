@@ -1,60 +1,135 @@
-/* GLOBAL DARK THEME */
-body {
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  background: #0A0A0A;
-  color: #FFFFFF;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif !important;
+  background: #f4f6fb !important;
+  color: #1c2430;
+}
+
+/* APP LAYOUT */
 .app {
-  display: grid;
-  grid-template-columns: 240px 1fr 280px; /* Sidebar | Main | Trackers */
+  display: flex !important;
   min-height: 100vh;
+  background: #f4f6fb !important;
 }
 
 /* SIDEBAR */
 .sidebar {
-  background: #171717;
-  padding: 24px;
+  width: 240px;
+  background: #ffffff !important;
+  border-right: 1px solid #e5e9f2;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  position: sticky;
-  top: 0;
 }
 
-.nav { display: flex; flex-direction: column; gap: 15px; flex: 1; }
-.logout { margin-top: auto; padding: 15px; color: #A3A3A3; cursor: pointer; }
+/* LOGO */
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111 !important;
+}
 
-/* MAIN AREA */
-.main { padding: 24px; }
+/* NAV */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-/* KPI STRIP */
+.nav-item {
+  font-size: 14px;
+  color: #556070 !important;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 24px;
+  background: #f4f6fb !important;
+}
+
+/* HERO */
+.hero h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.hero p {
+  color: #6b768a;
+}
+
+/* KPI */
 .kpi-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin: 20px 0;
 }
 
 .kpi-card {
-  background: #171717;
-  border: 1px solid #333;
+  background: #ffffff !important;
+  border: 1px solid #e5e9f2;
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   text-align: center;
 }
 
-/* WORKSPACE - Immediate Follow-ups */
-.workspace { margin-bottom: 24px; }
-.lead-card {
-  background: #171717;
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 12px;
+/* WORKSPACE */
+.workspace {
+  background: #ffffff !important;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  padding: 16px;
 }
 
-/* SIDE TRACKERS */
-.trackers { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
-.tracker-card { background: #171717; border: 1px solid #333; border-radius: 12px; padding: 20px; }
+/* FOLLOWUPS */
+.followup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-card {
+  background: #ffffff !important;
+  border: 1px solid #e6ebf5;
+  border-radius: 12px;
+  padding: 14px;
+  display: block;
+}
+
+/* TEXT */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b768a;
+}
+
+/* BUTTONS */
+button {
+  background: #f3f6ff !important;
+  border: 1px solid #d9e2ff;
+  color: #2f5cff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* LOGOUT FIX */
+.logout {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: #2f5cff !important;
+  color: white !important;
+  text-align: center;
+  font-weight: 600;
+}
