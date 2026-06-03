@@ -200,3 +200,9 @@ padding: 10px;
   font-weight: 600;
   color: #384152;
 }
+
+.special-card {
+  border-left: 5px solid #2f5cff;
+
+  background: #edf4ff;
+}
