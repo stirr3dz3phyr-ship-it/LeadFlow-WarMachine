@@ -46,10 +46,10 @@ export default function App() {
                 <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
               </div>
               <div className="lead-actions">
-  <button className="action-btn bg-whatsapp"><i className="fa-brands fa-whatsapp"></i></button>
-  <button className="action-btn bg-call"><i className="fa-solid fa-phone"></i></button>
-  <button className="action-btn bg-mail"><i className="fa-solid fa-envelope"></i></button>
-  <button className="action-btn bg-timeline"><i className="fa-solid fa-clock"></i></button>
+  <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366'}}></i>
+  <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff'}}></i>
+  <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107'}}></i>
+  <i className="fa-solid fa-clock icon-action" style={{color: '#888888'}}></i>
 </div>
             </div>           
             {/* ROW 2 */}
