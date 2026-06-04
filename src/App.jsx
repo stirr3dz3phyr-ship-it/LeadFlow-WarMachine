@@ -51,12 +51,7 @@ export default function App() {
   <button className="action-btn bg-mail">Mail</button>
   <button className="action-btn bg-timeline">Timeline</button>
 </div>
-              <div className="lead-actions">
-                <button className="action-btn bg-whatsapp">WhatsApp</button>
-                <button className="action-btn bg-call">Call</button>
-              </div>
-            </div>
-
+             
             {/* ROW 2 */}
             <div className="lead-card">
               <div className="lead-top">
