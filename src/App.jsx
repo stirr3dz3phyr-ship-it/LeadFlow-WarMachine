@@ -14,6 +14,7 @@ export default function App() {
           <div className="nav-item">Dashboard</div>
           <div className="nav-item">Leads</div>
           <div className="nav-item">Follow-ups</div>
+          <div className="nav-item">Sales Analysis</div>
           <div className="nav-item">Settings</div>
         </div>
         <div className="logout">Logout</div>
