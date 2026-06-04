@@ -98,3 +98,31 @@ html, body {
 
 .bg-whatsapp { background-color: #25D366; } /* Green */
 .bg-call { background-color: #2f5cff; }     /* Blue */
+
+/* ACTION BAR STYLING */
+.lead-actions {
+  display: flex;
+  gap: 8px; /* Slightly tighter gap */
+  margin-top: 15px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 6px 0; /* Smaller height */
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 11px; /* Smaller font to fit 4 buttons */
+  color: white;
+  transition: opacity 0.2s;
+  text-align: center;
+}
+
+.action-btn:hover { opacity: 0.8; }
+
+/* COLOR CODING */
+.bg-whatsapp { background-color: #25D366; } /* Green */
+.bg-call     { background-color: #2f5cff; } /* Brand Blue */
+.bg-mail     { background-color: #FFC107; color: #384152; } /* Yellow/Amber */
+.bg-timeline { background-color: #888888; } /* Grey */
