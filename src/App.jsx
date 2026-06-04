@@ -1,8 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+import "./styles.css";
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const username = "Ragz";
 
+  // LOGIN SCREEN
+  if (!isLoggedIn) {
+    return (
+      <div className="login-page">
+        
+        {/* LEFT SIDE */}
+        <div className="login-left">
+          <div className="login-overlay">
+            <div className="login-hero">
+              <h1>LeadFlow War Machine</h1>
+              <p>Command Center for Strategic Growth</p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="login-right">
+          <div className="login-box">
+
+            <img
+              src="/logo.png"
+              alt="LeadFlow Logo"
+              className="login-logo"
+            />
+
+            <h2>Welcome Back</h2>
+
+            <input
+              type="text"
+              placeholder="Username"
+              className="login-input"
+            />
+
+            <input
+              type="password"
+              placeholder="Password"
+              className="login-input"
+            />
+
+            <button
+              className="user-login-btn"
+              onClick={() => setIsLoggedIn(true)}
+            >
+              User Login
+            </button>
+
+            <button
+              className="admin-login-btn"
+              onClick={() => setIsLoggedIn(true)}
+            >
+              Admin Login
+            </button>
+
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // DASHBOARD
   return (
     <div className="app">
       {/* SIDEBAR */}
@@ -10,6 +72,7 @@ export default function App() {
         <div className="logo-area">
           <img src="/logo.png" alt="LeadFlow Logo" className="logo-img" />
         </div>
+
         <div className="nav-block">
           <div className="nav-item">Dashboard</div>
           <div className="nav-item">Leads</div>
@@ -17,6 +80,7 @@ export default function App() {
           <div className="nav-item">Sales Analysis</div>
           <div className="nav-item">Settings</div>
         </div>
+
         <div className="logout">Logout</div>
       </aside>
 
@@ -35,43 +99,64 @@ export default function App() {
         {/* WORKSPACE */}
         <div className="workspace">
           <h3>Shall we begin the day by following up on:</h3>
-          
+
           <div className="followup-list">
-            {/* ROW 1: BluePeak */}
             <div className="lead-card">
               <div className="lead-top">
                 <span>BluePeak Interiors</span>
                 <span>RPC: Arjun Mehta</span>
               </div>
-              <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
-                <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
-                  <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
-                  <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
-                  <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
-                  <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
+
+              <div
+                className="lead-bottom"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center"
+                }}
+              >
+                <span>
+                  Last Contact: 2 Days Ago | Status: Interested | Priority:
+                  Warm
+                </span>
+
+                <div className="lead-actions">
+                  <i className="fa-brands fa-whatsapp icon-action"></i>
+                  <i className="fa-solid fa-phone icon-action"></i>
+                  <i className="fa-solid fa-envelope icon-action"></i>
+                  <i className="fa-solid fa-clock icon-action"></i>
                 </div>
               </div>
             </div>
 
-            {/* ROW 2: Urban Nest */}
             <div className="lead-card">
               <div className="lead-top">
                 <span>Urban Nest Builders</span>
                 <span>RPC: Priya Sharma</span>
               </div>
-              <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
-                <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
-                  <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
-                  <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
-                  <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
-                  <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
+
+              <div
+                className="lead-bottom"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center"
+                }}
+              >
+                <span>
+                  Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot
+                </span>
+
+                <div className="lead-actions">
+                  <i className="fa-brands fa-whatsapp icon-action"></i>
+                  <i className="fa-solid fa-phone icon-action"></i>
+                  <i className="fa-solid fa-envelope icon-action"></i>
+                  <i className="fa-solid fa-clock icon-action"></i>
                 </div>
               </div>
             </div>
-          </div> 
-        </div> {/* This closes the workspace */}
+          </div>
+        </div>
 
         {/* BOTTOM KPI ROW */}
         <div className="kpi-row">
@@ -80,8 +165,7 @@ export default function App() {
           <div className="kpi-card"><h1>3 | $2.4K</h1><p>Closed Sales</p></div>
           <div className="kpi-card special-card"><h1>$3.6K</h1><p>Target Remaining</p></div>
         </div>
-
-      </main> 
+      </main>
     </div>
   );
 }
