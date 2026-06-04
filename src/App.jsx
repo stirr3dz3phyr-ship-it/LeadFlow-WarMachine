@@ -69,8 +69,8 @@ export default function App() {
         </div>
       </div>
     </div>
-  </div> {/* End of followup-list */}
-</div> {/* End of workspace - CLOSED EARLY NOW */}
+  </div> 
+</div> 
 
 {/* BOTTOM KPI ROW - Now outside the workspace box */}
 <div className="kpi-row">
