@@ -68,7 +68,7 @@ export default function App() {
       <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
     </div>
   </div>
-
+</div>
         {/* BOTTOM KPI ROW */}
         <div className="kpi-row">
           <div className="kpi-card"><h1>12</h1><p>Warm / Hot Prospects</p></div>
