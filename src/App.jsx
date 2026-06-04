@@ -36,37 +36,38 @@ export default function App() {
           <h3>Shall we begin the day by following up on:</h3>
           <div className="followup-list">
             
-            {/* ROW 1 */}
-            <div className="lead-card">
-              <div className="lead-top">
-                <span>BluePeak Interiors</span>
-                <span>RPC: Arjun Mehta</span>
-              </div>
-              <div className="lead-bottom">
-                <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
-              </div>
-              <div className="lead-actions">
-  <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366'}}></i>
-  <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff'}}></i>
-  <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107'}}></i>
-  <i className="fa-solid fa-clock icon-action" style={{color: '#888888'}}></i>
+           {/* ROW 1: BluePeak */}
+<div className="lead-card">
+  <div className="lead-top">
+    <span>BluePeak Interiors</span>
+    <span>RPC: Arjun Mehta</span>
+  </div>
+  <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
+    <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
+      <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
+      <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
+      <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
+      <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
+    </div>
+  </div>
 </div>
-            </div>           
-            {/* ROW 2 */}
-            <div className="lead-card">
-              <div className="lead-top">
-                <span>Urban Nest Builders</span>
-                <span>RPC: Priya Sharma</span>
-              </div>
-              <div className="lead-bottom">
-                <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
-              </div>
-              <div className="lead-actions">
-                <button className="action-btn bg-whatsapp">WhatsApp</button>
-                <button className="action-btn bg-call">Call</button>
-              </div>
-            </div>
 
+{/* ROW 2: Urban Nest */}
+<div className="lead-card">
+  <div className="lead-top">
+    <span>Urban Nest Builders</span>
+    <span>RPC: Priya Sharma</span>
+  </div>
+  <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
+    <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
+      <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
+      <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
+      <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
+      <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
+    </div>
+  </div>
           </div>
         </div>
 
