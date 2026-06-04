@@ -34,48 +34,51 @@ export default function App() {
         {/* WORKSPACE */}
         <div className="workspace">
           <h3>Shall we begin the day by following up on:</h3>
+          
           <div className="followup-list">
-            
-           {/* ROW 1: BluePeak */}
-<div className="lead-card">
-  <div className="lead-top">
-    <span>BluePeak Interiors</span>
-    <span>RPC: Arjun Mehta</span>
-  </div>
-  <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-    <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
-    <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
-      <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
-      <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
-      <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
-      <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
-    </div>
-  </div>
-</div>
+            {/* ROW 1: BluePeak */}
+            <div className="lead-card">
+              <div className="lead-top">
+                <span>BluePeak Interiors</span>
+                <span>RPC: Arjun Mehta</span>
+              </div>
+              <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
+                <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
+                  <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
+                  <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
+                  <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
+                  <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
+                </div>
+              </div>
+            </div>
 
-{/* ROW 2: Urban Nest */}
-<div className="lead-card">
-  <div className="lead-top">
-    <span>Urban Nest Builders</span>
-    <span>RPC: Priya Sharma</span>
-  </div>
-  <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-    <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
-    <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
-      <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
-      <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
-      <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
-      <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
-    </div>
-  </div>
-</div>
-        {/* BOTTOM KPI ROW */}
-        <div className="kpi-row">
-          <div className="kpi-card"><h1>12</h1><p>Warm / Hot Prospects</p></div>
-          <div className="kpi-card"><h1>6</h1><p>RFI Follow-ups</p></div>
-          <div className="kpi-card"><h1>3 | $2.4K</h1><p>Closed Sales</p></div>
-          <div className="kpi-card special-card"><h1>$3.6K</h1><p>Target Remaining</p></div>
-        </div>
+            {/* ROW 2: Urban Nest */}
+            <div className="lead-card">
+              <div className="lead-top">
+                <span>Urban Nest Builders</span>
+                <span>RPC: Priya Sharma</span>
+              </div>
+              <div className="lead-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
+                <div className="lead-actions" style={{ display: 'flex', gap: '15px', marginTop: '0' }}>
+                  <i className="fa-brands fa-whatsapp icon-action" style={{color: '#25D366', cursor: 'pointer'}}></i>
+                  <i className="fa-solid fa-phone icon-action" style={{color: '#2f5cff', cursor: 'pointer'}}></i>
+                  <i className="fa-solid fa-envelope icon-action" style={{color: '#FFC107', cursor: 'pointer'}}></i>
+                  <i className="fa-solid fa-clock icon-action" style={{color: '#888888', cursor: 'pointer'}}></i>
+                </div>
+              </div>
+            </div>
+          </div> {/* End of followup-list */}
+
+          {/* BOTTOM KPI ROW */}
+          <div className="kpi-row">
+            <div className="kpi-card"><h1>12</h1><p>Warm / Hot Prospects</p></div>
+            <div className="kpi-card"><h1>6</h1><p>RFI Follow-ups</p></div>
+            <div className="kpi-card"><h1>3 | $2.4K</h1><p>Closed Sales</p></div>
+            <div className="kpi-card special-card"><h1>$3.6K</h1><p>Target Remaining</p></div>
+          </div>
+        </div> {/* End of workspace */}
       </main> 
     </div>
   );
