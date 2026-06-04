@@ -4,12 +4,12 @@
 html, body { 
   margin: 0; padding: 0; height: 100%; 
   font-family: 'Segoe UI', Arial, sans-serif; 
-  background: #eef1f7; 
+  background: #f0f0f0; 
 }
 
 .app { 
   display: flex; width: 100vw; height: 100vh; 
-  overflow: hidden; background: #eef1f7; 
+  overflow: hidden; background: #f0f0f0; 
 }
 
 /* SIDEBAR - Background set to #dce8ff */
@@ -30,8 +30,10 @@ html, body {
   background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; 
 }
 
-/* MAIN AREA */
-.main { flex: 1; padding: 24px; overflow-y: auto; background: #eef1f7; }
+/* MAIN AREA - Background set to lightgrey (#f0f0f0) */
+.main { 
+  flex: 1; padding: 24px; overflow-y: auto; background: #f0f0f0; 
+}
 
 .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
 
