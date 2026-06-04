@@ -45,18 +45,18 @@ export default function App() {
           </div>
         </div>
 
-        {/* FOLLOW-UP LIST */}
-        <h3>Shall we begin the day by following up on:</h3>
-        <div className="followup-list">
-          <div className="lead-card">
-            <div className="lead-top">
-              <span>BluePeak Interiors</span>
-              <span>RPC: Arjun Mehta</span>
-            </div>
-            <div className="lead-bottom">
-              <span>Last Contact: 2 Days Ago</span>
-              <span>Status: Interested</span>
-              <span>Priority: Warm</span>
+        {/* FOLLOW-UP SECTION */}
+        <div className="workspace">
+          <h3>Shall we begin the day by following up on:</h3>
+          <div className="followup-list">
+            <div className="lead-card">
+              <div className="lead-top">
+                <span>BluePeak Interiors</span>
+                <span>RPC: Arjun Mehta</span>
+              </div>
+              <div className="lead-bottom">
+                <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
+              </div>
             </div>
           </div>
         </div>
