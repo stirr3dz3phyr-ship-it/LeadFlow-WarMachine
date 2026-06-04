@@ -1,150 +1,97 @@
-/* GLOBAL SETTINGS */
-* { box-sizing: border-box; }
-
-html, body { 
-  margin: 0; padding: 0; height: 100%; 
-  font-family: 'Segoe UI', Arial, sans-serif; 
-  background: slategray; 
-}
-
-.app { 
-  display: flex; width: 100vw; height: 100vh; 
-  overflow: hidden; 
-  background: transparent;
-}
-
-/* SIDEBAR */
-.sidebar { 
-  width: 250px; min-width: 250px; height: 100vh; 
-  display: flex; flex-direction: column; 
-  background: #dce8ff; 
-  border-right: 1px solid #cce0ff; padding: 16px; 
-}
-
-.logo-img { width: 140px; height: auto; margin: 0 auto; display: block; }
-
-.nav-block { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.nav-item { padding: 10px; border-radius: 8px; cursor: pointer; color: #384152; transition: background 0.2s; }
-.nav-item:hover { background: #cce0ff; }
-.logout { 
-  margin-top: auto; padding: 10px; text-align: center; 
-  background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; 
-}
-
-/* MAIN AREA */
-.main { 
-  flex: 1; padding: 24px; overflow-y: auto; 
-  background: slategray; 
-}
-
-.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-
-/* KPI CARDS - Restored hover effects and shadows */
-.kpi-card { 
-  background: #dce8ff; 
-  border-radius: 14px; padding: 15px; 
-  display: flex; flex-direction: column; justify-content: center; align-items: center; 
-  border: 1px solid #cce0ff; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.kpi-card:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 12px rgba(0,0,0,0.15); 
-}
-
-.kpi-card h1 { margin: 0; font-size: 24px; color: #2f5cff; }
-.kpi-card p { margin: 5px 0 0 0; font-size: 13px; font-weight: 600; color: #384152; }
-
-/* WORKSPACE */
-.workspace { 
-  background: #dce8ff; 
-  border: 1px solid #cce0ff; 
-  border-radius: 14px; padding: 20px; margin-bottom: 24px; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.followup-list { display: flex; flex-direction: column; gap: 10px; }
-.lead-card { 
-  background: #dce8ff; border: 1px solid #cce0ff; border-radius: 10px; padding: 16px; 
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.lead-card:hover { transform: scale(1.01); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.lead-top { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 8px; }
-.special-card { border-left: 5px solid #2f5cff; background: #cce0ff; }
-
-/* ACTION BAR STYLING */
-.lead-actions {
+/* LOGIN PAGE */
+.login-page {
   display: flex;
-  gap: 20px; /* This creates the space between the icons */
-  margin-top: 15px;
+  width: 100vw;
+  height: 100vh;
 }
 
-.icon-action {
-  font-size: 20px; /* Adjust size here */
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.icon-action:hover {
-  transform: scale(1.2); /* Makes them grow slightly when you hover over them */
-}
-
-.action-btn {
+.login-left {
   flex: 1;
-  padding: 8px 0;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-  transition: opacity 0.2s;
-  text-align: center;
+  background: url("https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600")
+    center center/cover no-repeat;
+  position: relative;
 }
 
-.action-btn:hover { opacity: 0.8; }
+.login-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(47, 92, 255, 0.72);
 
-.bg-whatsapp { background-color: #25D366; } /* Green */
-.bg-call { background-color: #2f5cff; }     /* Blue */
-
-/* ACTION BAR STYLING */
-.lead-actions {
-  display: flex;
-  gap: 8px; /* Slightly tighter gap */
-  margin-top: 15px;
-}
-
-.action-btn {
-  flex: 1;
-  padding: 6px 0; /* Smaller height */
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 11px; /* Smaller font to fit 4 buttons */
-  color: white;
-  transition: opacity 0.2s;
-  text-align: center;
-}
-
-.action-btn:hover { opacity: 0.8; }
-
-/* COLOR CODING */
-.bg-whatsapp { background-color: #25D366; } /* Green */
-.bg-call     { background-color: #2f5cff; } /* Brand Blue */
-.bg-mail     { background-color: #FFC107; color: #384152; } /* Yellow/Amber */
-.bg-timeline { background-color: #888888; } /* Grey */
-
-/* Center the icons inside the buttons */
-.action-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Keep your other existing styles here */
+  text-align: center;
+  color: white;
 }
 
-.action-btn i {
-  font-size: 14px;
+.login-hero h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+}
+
+.login-hero p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.login-right {
+  width: 420px;
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-logo {
+  width: 140px;
+  margin: 0 auto 20px;
+}
+
+.login-box h2 {
+  text-align: center;
+  color: #384152;
+  margin-bottom: 30px;
+}
+
+.login-input {
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #cce0ff;
+  font-size: 15px;
+}
+
+.user-login-btn,
+.admin-login-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.user-login-btn {
+  background: #dce8ff;
+  color: #2f5cff;
+}
+
+.admin-login-btn {
+  background: #2f5cff;
+  color: white;
+}
+
+.user-login-btn:hover,
+.admin-login-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
 }
