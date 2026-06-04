@@ -51,7 +51,7 @@ export default function App() {
   <button className="action-btn bg-mail">Mail</button>
   <button className="action-btn bg-timeline">Timeline</button>
 </div>
-             
+            </div>           
             {/* ROW 2 */}
             <div className="lead-card">
               <div className="lead-top">
