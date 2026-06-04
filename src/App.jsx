@@ -46,6 +46,12 @@ export default function App() {
                 <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
               </div>
               <div className="lead-actions">
+  <button className="action-btn bg-whatsapp">WhatsApp</button>
+  <button className="action-btn bg-call">Call</button>
+  <button className="action-btn bg-mail">Mail</button>
+  <button className="action-btn bg-timeline">Timeline</button>
+</div>
+              <div className="lead-actions">
                 <button className="action-btn bg-whatsapp">WhatsApp</button>
                 <button className="action-btn bg-call">Call</button>
               </div>
