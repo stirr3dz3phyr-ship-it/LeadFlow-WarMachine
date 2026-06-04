@@ -57,35 +57,35 @@ export default function App() {
 </div>
 
   {/* FOLLOW-UP LIST (REAL COMPONENT) */}
-       <h3>Shall we begin the day by following up on:</h3>
-  <div className="followup-list">
+     {/* FOLLOW-UP LIST (REAL COMPONENT) */}
+<h3>Shall we begin the day by following up on:</h3>
 
-    <div className="lead-card">
+<div className="followup-list">
 
-  <div className="lead-top">
-    <span>BluePeak Interiors</span>
-    <span>RPC: Arjun Mehta</span>
-  </div>
+  <div className="lead-card">
 
-  <div className="lead-bottom">
-    <span>Last Contact: 2 Days Ago</span>
-    <span>Status: Interested</span>
-    <span>Priority: Warm</span>
-  </div>
-
-</div>
-
-</div>
-
-    <div className="lead-card">
-      Urban Nest Builders — Priya Sharma
+    <div className="lead-top">
+      <span>BluePeak Interiors</span>
+      <span>RPC: Arjun Mehta</span>
     </div>
 
-    <div className="lead-card">
-      Zenith Constructions — Rahul Jain
+    <div className="lead-bottom">
+      <span>Last Contact: 2 Days Ago</span>
+      <span>Status: Interested</span>
+      <span>Priority: Warm</span>
     </div>
 
   </div>
+
+  <div className="lead-card">
+    Urban Nest Builders — Priya Sharma
+  </div>
+
+  <div className="lead-card">
+    Zenith Constructions — Rahul Jain
+  </div>
+
+</div>
 
   {/* BOTTOM KPI ROW */}
 <div className="kpi-row">
