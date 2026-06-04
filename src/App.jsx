@@ -31,10 +31,11 @@ export default function App() {
           <div className="kpi-card"><h1>13</h1><p>Unreachable / RNR Leads</p></div>
         </div>
 
-        {/* WORKSPACE */}
+        {/* WORKSPACE - NOW WITH TWO ROWS */}
         <div className="workspace">
           <h3>Shall we begin the day by following up on:</h3>
           <div className="followup-list">
+            {/* ROW 1 */}
             <div className="lead-card">
               <div className="lead-top">
                 <span>BluePeak Interiors</span>
@@ -42,6 +43,16 @@ export default function App() {
               </div>
               <div className="lead-bottom">
                 <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
+              </div>
+            </div>
+            {/* ROW 2 */}
+            <div className="lead-card">
+              <div className="lead-top">
+                <span>Urban Nest Builders</span>
+                <span>RPC: Priya Sharma</span>
+              </div>
+              <div className="lead-bottom">
+                <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
               </div>
             </div>
           </div>
