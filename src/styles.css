@@ -9,7 +9,8 @@ html, body {
 
 .app { 
   display: flex; width: 100vw; height: 100vh; 
-  overflow: hidden; background: #f0f0f0; 
+  overflow: hidden; 
+  background: transparent; /* Changed to transparent to let .main take control */
 }
 
 /* SIDEBAR - Background set to #dce8ff */
@@ -30,9 +31,10 @@ html, body {
   background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; 
 }
 
-/* MAIN AREA - Background set to lightgrey (#f0f0f0) */
+/* MAIN AREA - Background explicitly set to #f0f0f0 */
 .main { 
-  flex: 1; padding: 24px; overflow-y: auto; background: #f0f0f0; 
+  flex: 1; padding: 24px; overflow-y: auto; 
+  background: #f0f0f0; 
 }
 
 .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
