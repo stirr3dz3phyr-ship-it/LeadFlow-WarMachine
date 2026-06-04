@@ -1,36 +1,143 @@
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; background: #eef1f7; }
+/* GLOBAL SETTINGS */
+* { 
+  box-sizing: border-box; 
+}
 
-.app { display: flex; width: 100vw; height: 100vh; overflow: hidden; background: #eef1f7; }
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  background: #eef1f7; 
+}
 
-/* SIDEBAR - Now unified with the background */
+.app { 
+  display: flex; 
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden; 
+  background: #eef1f7; 
+}
+
+/* SIDEBAR - Unified White */
 .sidebar { 
   width: 250px; 
   min-width: 250px; 
   height: 100vh; 
   display: flex; 
   flex-direction: column; 
-  background: #eef1f7; 
+  background: #ffffff; 
   border-right: 1px solid #e5e9f2; 
   padding: 16px; 
 }
 
-.logo-img { width: 140px; height: auto; margin: 0 auto; display: block; }
-.nav-block { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.nav-item { padding: 10px; border-radius: 8px; cursor: pointer; }
-.nav-item:hover { background: #dce8ff; }
-.logout { margin-top: auto; padding: 10px; text-align: center; background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; }
+.logo-img { 
+  width: 140px; 
+  height: auto; 
+  margin: 0 auto; 
+  display: block; 
+}
+
+.nav-block { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  margin-top: 20px; 
+}
+
+.nav-item { 
+  padding: 10px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  color: #384152;
+}
+
+.nav-item:hover { 
+  background: #f2f5ff; 
+}
+
+.logout { 
+  margin-top: auto; 
+  padding: 10px; 
+  text-align: center; 
+  background: #2f5cff; 
+  color: white; 
+  border-radius: 10px; 
+  cursor: pointer; 
+}
 
 /* MAIN AREA */
-.main { flex: 1; padding: 24px; overflow-y: auto; background: #eef1f7; }
-.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-.kpi-card { background: #ffffff; border-radius: 14px; padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #e5e9f2; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-.kpi-card h1 { margin: 0; font-size: 24px; color: #2f5cff; }
-.kpi-card p { margin: 5px 0 0 0; font-size: 13px; font-weight: 600; color: #384152; }
+.main { 
+  flex: 1; 
+  padding: 24px; 
+  overflow-y: auto; 
+  background: #eef1f7; 
+}
 
-/* WORKSPACE */
-.workspace { background: #ffffff; border: 1px solid #e5e9f2; border-radius: 14px; padding: 20px; margin-bottom: 24px; }
-.followup-list { display: flex; flex-direction: column; gap: 10px; }
-.lead-card { background: #f9fbff; border: 1px solid #dce8ff; border-radius: 10px; padding: 16px; }
-.lead-top { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 8px; }
-.special-card { border-left: 5px solid #2f5cff; background: #edf4ff; }
+.kpi-row { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px; 
+  margin-bottom: 24px; 
+}
+
+/* CARDS - Unified White */
+.kpi-card { 
+  background: #ffffff; 
+  border-radius: 14px; 
+  padding: 15px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  border: 1px solid #e5e9f2; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+}
+
+.kpi-card h1 { 
+  margin: 0; 
+  font-size: 24px; 
+  color: #2f5cff; 
+}
+
+.kpi-card p { 
+  margin: 5px 0 0 0; 
+  font-size: 13px; 
+  font-weight: 600; 
+  color: #384152; 
+}
+
+/* WORKSPACE - Unified White */
+.workspace { 
+  background: #ffffff; 
+  border: 1px solid #e5e9f2; 
+  border-radius: 14px; 
+  padding: 20px; 
+  margin-bottom: 24px; 
+}
+
+.followup-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.lead-card { 
+  background: #f9fbff; 
+  border: 1px solid #dce8ff; 
+  border-radius: 10px; 
+  padding: 16px; 
+}
+
+.lead-top { 
+  display: flex; 
+  justify-content: space-between; 
+  font-weight: bold; 
+  margin-bottom: 8px; 
+}
+
+.special-card { 
+  border-left: 5px solid #2f5cff; 
+  background: #edf4ff; 
+}
