@@ -4,7 +4,7 @@
 html, body { 
   margin: 0; padding: 0; height: 100%; 
   font-family: 'Segoe UI', Arial, sans-serif; 
-  background: lightgrey; 
+  background: darkgrey; 
 }
 
 .app { 
@@ -31,10 +31,10 @@ html, body {
   background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; 
 }
 
-/* MAIN AREA - Background set to lightgrey */
+/* MAIN AREA - Background set to darkgrey */
 .main { 
   flex: 1; padding: 24px; overflow-y: auto; 
-  background: lightgrey; 
+  background: darkgrey; 
 }
 
 .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
