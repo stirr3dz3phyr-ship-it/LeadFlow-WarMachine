@@ -78,8 +78,18 @@ html, body {
 /* ACTION BAR STYLING */
 .lead-actions {
   display: flex;
-  gap: 10px;
+  gap: 20px; /* This creates the space between the icons */
   margin-top: 15px;
+}
+
+.icon-action {
+  font-size: 20px; /* Adjust size here */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-action:hover {
+  transform: scale(1.2); /* Makes them grow slightly when you hover over them */
 }
 
 .action-btn {
