@@ -13,7 +13,7 @@ html, body {
   background: transparent;
 }
 
-/* SIDEBAR - Background set to #dce8ff */
+/* SIDEBAR */
 .sidebar { 
   width: 250px; min-width: 250px; height: 100vh; 
   display: flex; flex-direction: column; 
@@ -24,14 +24,14 @@ html, body {
 .logo-img { width: 140px; height: auto; margin: 0 auto; display: block; }
 
 .nav-block { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.nav-item { padding: 10px; border-radius: 8px; cursor: pointer; color: #384152; }
+.nav-item { padding: 10px; border-radius: 8px; cursor: pointer; color: #384152; transition: background 0.2s; }
 .nav-item:hover { background: #cce0ff; }
 .logout { 
   margin-top: auto; padding: 10px; text-align: center; 
   background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; 
 }
 
-/* MAIN AREA - Background set to slategray */
+/* MAIN AREA */
 .main { 
   flex: 1; padding: 24px; overflow-y: auto; 
   background: slategray; 
@@ -39,24 +39,38 @@ html, body {
 
 .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
 
-/* KPI CARDS - Background set to #dce8ff */
+/* KPI CARDS - Restored hover effects and shadows */
 .kpi-card { 
   background: #dce8ff; 
   border-radius: 14px; padding: 15px; 
   display: flex; flex-direction: column; justify-content: center; align-items: center; 
-  border: 1px solid #cce0ff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+  border: 1px solid #cce0ff; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.kpi-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15); 
+}
+
 .kpi-card h1 { margin: 0; font-size: 24px; color: #2f5cff; }
 .kpi-card p { margin: 5px 0 0 0; font-size: 13px; font-weight: 600; color: #384152; }
 
-/* WORKSPACE - Background set to #dce8ff */
+/* WORKSPACE */
 .workspace { 
   background: #dce8ff; 
   border: 1px solid #cce0ff; 
   border-radius: 14px; padding: 20px; margin-bottom: 24px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .followup-list { display: flex; flex-direction: column; gap: 10px; }
-.lead-card { background: #dce8ff; border: 1px solid #cce0ff; border-radius: 10px; padding: 16px; }
+.lead-card { 
+  background: #dce8ff; border: 1px solid #cce0ff; border-radius: 10px; padding: 16px; 
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lead-card:hover { transform: scale(1.01); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 .lead-top { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 8px; }
 .special-card { border-left: 5px solid #2f5cff; background: #cce0ff; }
