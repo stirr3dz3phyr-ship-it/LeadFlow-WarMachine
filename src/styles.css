@@ -3,18 +3,28 @@ html, body { margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif
 
 .app { display: flex; width: 100vw; height: 100vh; overflow: hidden; background: #eef1f7; }
 
-/* SIDEBAR */
-.sidebar { width: 250px; min-width: 250px; height: 100vh; display: flex; flex-direction: column; background: #ffffff; border-right: 1px solid #e5e9f2; padding: 16px; }
+/* SIDEBAR - Now unified with the background */
+.sidebar { 
+  width: 250px; 
+  min-width: 250px; 
+  height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  background: #eef1f7; 
+  border-right: 1px solid #e5e9f2; 
+  padding: 16px; 
+}
+
 .logo-img { width: 140px; height: auto; margin: 0 auto; display: block; }
 .nav-block { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
 .nav-item { padding: 10px; border-radius: 8px; cursor: pointer; }
-.nav-item:hover { background: #f2f5ff; }
+.nav-item:hover { background: #dce8ff; }
 .logout { margin-top: auto; padding: 10px; text-align: center; background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; }
 
 /* MAIN AREA */
 .main { flex: 1; padding: 24px; overflow-y: auto; background: #eef1f7; }
 .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-.kpi-card { background: #dce8ff; border-radius: 14px; padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #d9e1ee; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.kpi-card { background: #ffffff; border-radius: 14px; padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #e5e9f2; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 .kpi-card h1 { margin: 0; font-size: 24px; color: #2f5cff; }
 .kpi-card p { margin: 5px 0 0 0; font-size: 13px; font-weight: 600; color: #384152; }
 
