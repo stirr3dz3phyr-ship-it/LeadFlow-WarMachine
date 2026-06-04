@@ -35,22 +35,35 @@ export default function App() {
         <div className="workspace">
           <h3>Shall we begin the day by following up on:</h3>
           <div className="followup-list">
-            {/* ROW 1 */}
-            <div className="lead-card">
-              <div className="lead-top">
-                <span>BluePeak Interiors</span>
-                <span>RPC: Arjun Mehta</span>
-              </div>
-              <div className="lead-bottom">
-                <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
-              </div>
-            </div>
-            {/* ROW 2 */}
-            <div className="lead-card">
-              <div className="lead-top">
-                <span>Urban Nest Builders</span>
-                <span>RPC: Priya Sharma</span>
-              </div>
+           {/* ROW 1 */}
+<div className="lead-card">
+  <div className="lead-top">
+    <span>BluePeak Interiors</span>
+    <span>RPC: Arjun Mehta</span>
+  </div>
+  <div className="lead-bottom">
+    <span>Last Contact: 2 Days Ago | Status: Interested | Priority: Warm</span>
+  </div>
+  <div className="lead-actions">
+    <button className="action-btn bg-whatsapp">WhatsApp</button>
+    <button className="action-btn bg-call">Call</button>
+  </div>
+</div>
+
+{/* ROW 2 */}
+<div className="lead-card">
+  <div className="lead-top">
+    <span>Urban Nest Builders</span>
+    <span>RPC: Priya Sharma</span>
+  </div>
+  <div className="lead-bottom">
+    <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
+  </div>
+  <div className="lead-actions">
+    <button className="action-btn bg-whatsapp">WhatsApp</button>
+    <button className="action-btn bg-call">Call</button>
+  </div>
+</div>
               <div className="lead-bottom">
                 <span>Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot</span>
               </div>
