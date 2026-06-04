@@ -126,3 +126,15 @@ html, body {
 .bg-call     { background-color: #2f5cff; } /* Brand Blue */
 .bg-mail     { background-color: #FFC107; color: #384152; } /* Yellow/Amber */
 .bg-timeline { background-color: #888888; } /* Grey */
+
+/* Center the icons inside the buttons */
+.action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Keep your other existing styles here */
+}
+
+.action-btn i {
+  font-size: 14px;
+}
