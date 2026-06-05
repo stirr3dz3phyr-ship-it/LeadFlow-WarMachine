@@ -1,9 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const username = "Ragz";
 
+  // LOGIN PAGE
+  if (!isLoggedIn) {
+    return (
+      <div className="login-page">
+
+        {/* LEFT SIDE */}
+        <div className="login-left">
+          <div className="login-overlay">
+            <div className="login-hero">
+              <h1>LeadFlow War Machine</h1>
+              <p>Command Center for Strategic Growth</p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="login-right">
+          <div className="login-box">
+
+            <img
+              src="/logo.png"
+              alt="LeadFlow Logo"
+              className="login-logo"
+            />
+
+            <h2>Welcome Back</h2>
+
+            <input
+              type="text"
+              placeholder="Username"
+              className="login-input"
+            />
+
+            <input
+              type="password"
+              placeholder="Password"
+              className="login-input"
+            />
+
+            <button
+              className="user-login-btn"
+              onClick={() => setIsLoggedIn(true)}
+            >
+              User Login
+            </button>
+
+            <button
+              className="admin-login-btn"
+              onClick={() => setIsLoggedIn(true)}
+            >
+              Admin Login
+            </button>
+
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // DASHBOARD
   return (
     <div className="app">
       {/* SIDEBAR */}
@@ -20,7 +81,13 @@ export default function App() {
           <div className="nav-item">Settings</div>
         </div>
 
-        <div className="logout">Logout</div>
+        {/* LOGOUT BUTTON */}
+        <div
+          className="logout"
+          onClick={() => setIsLoggedIn(false)}
+        >
+          Logout
+        </div>
       </aside>
 
       {/* MAIN CONTENT */}
@@ -29,25 +96,10 @@ export default function App() {
 
         {/* TOP KPI ROW */}
         <div className="kpi-row">
-          <div className="kpi-card">
-            <h1>47</h1>
-            <p>New Leads - Untouched</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>16</h1>
-            <p>Follow-ups Today</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>9</h1>
-            <p>RPCs Reached</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>13</h1>
-            <p>Unreachable / RNR Leads</p>
-          </div>
+          <div className="kpi-card"><h1>47</h1><p>New Leads - Untouched</p></div>
+          <div className="kpi-card"><h1>16</h1><p>Follow-ups Today</p></div>
+          <div className="kpi-card"><h1>9</h1><p>RPCs Reached</p></div>
+          <div className="kpi-card"><h1>13</h1><p>Unreachable / RNR Leads</p></div>
         </div>
 
         {/* WORKSPACE */}
@@ -55,7 +107,6 @@ export default function App() {
           <h3>Shall we begin the day by following up on:</h3>
 
           <div className="followup-list">
-            {/* BLUEPEAK */}
             <div className="lead-card">
               <div className="lead-top">
                 <span>BluePeak Interiors</span>
@@ -84,7 +135,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* URBAN NEST */}
             <div className="lead-card">
               <div className="lead-top">
                 <span>Urban Nest Builders</span>
@@ -117,25 +167,10 @@ export default function App() {
 
         {/* BOTTOM KPI */}
         <div className="kpi-row">
-          <div className="kpi-card">
-            <h1>12</h1>
-            <p>Warm / Hot Prospects</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>6</h1>
-            <p>RFI Follow-ups</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>3 | $2.4K</h1>
-            <p>Closed Sales</p>
-          </div>
-
-          <div className="kpi-card special-card">
-            <h1>$3.6K</h1>
-            <p>Target Remaining</p>
-          </div>
+          <div className="kpi-card"><h1>12</h1><p>Warm / Hot Prospects</p></div>
+          <div className="kpi-card"><h1>6</h1><p>RFI Follow-ups</p></div>
+          <div className="kpi-card"><h1>3 | $2.4K</h1><p>Closed Sales</p></div>
+          <div className="kpi-card special-card"><h1>$3.6K</h1><p>Target Remaining</p></div>
         </div>
       </main>
     </div>
