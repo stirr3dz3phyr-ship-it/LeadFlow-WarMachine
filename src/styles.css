@@ -294,3 +294,48 @@ html, body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .help-box h3 { color: #2f5cff; margin-top: 0; }
+
+/* Sidebar Refinements */
+.nav-item-active {
+  background: #cce0ff !important;
+  color: #2f5cff;
+  font-weight: 600;
+  border-left: 4px solid #2f5cff;
+  border-radius: 0 8px 8px 0;
+}
+
+.nav-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  transform: translateX(5px);
+  background: #cce0ff;
+}
+
+/* Profile Section */
+.profile-section {
+  margin-top: auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #cce0ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background: #2f5cff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.profile-info h4 { margin: 0; font-size: 14px; color: #384152; }
+.profile-info p { margin: 0; font-size: 11px; color: #2f5cff; font-weight: 600; }
