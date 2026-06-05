@@ -24,7 +24,7 @@ export default function App() {
     return {
       newLeads: leads.filter(l => l.status === 'New Lead').length,
       followUpsToday: leads.filter(l => l.status === 'Follow-up Required').length,
-      hotProspects: leads.filter(l => l.temperature === 'Hot').length,
+     hotProspects: leads.filter(l => l.status === 'Hot').length,
       totalRevenue: leads.reduce((sum, l) => sum + l.saleValue, 0)
     };
   }, [leads]);
