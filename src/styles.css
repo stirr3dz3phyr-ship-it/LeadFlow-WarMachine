@@ -317,25 +317,49 @@ html, body {
 .profile-section {
   margin-top: auto;
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 25px 15px; /* Added more vertical breathing room */
   background: #cce0ff;
   border-radius: 12px;
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column; /* Vertical stacking */
+  align-items: center;    /* Centered alignment */
+  gap: 12px;             /* Spacing between avatar and text */
 }
 
-.avatar-circle {
-  width: 40px;
-  height: 40px;
+.avatar-wrapper {
+  position: relative;
+  width: 65px; /* Slightly larger avatar */
+  height: 65px;
+}
+
+.avatar-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2f5cff;
+}
+
+.upload-overlay {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
   background: #2f5cff;
+  color: white;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-weight: bold;
+  font-size: 11px;
+  cursor: pointer;
+  border: 2px solid #cce0ff;
 }
 
-.profile-info h4 { margin: 0; font-size: 14px; color: #384152; }
-.profile-info p { margin: 0; font-size: 11px; color: #2f5cff; font-weight: 600; }
+.profile-info {
+  text-align: center; /* Center the text under the avatar */
+}
+
+.profile-info h4 { margin: 0; font-size: 16px; color: #384152; font-weight: 700; }
+.profile-info p { margin: 4px 0 0 0; font-size: 12px; color: #2f5cff; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
