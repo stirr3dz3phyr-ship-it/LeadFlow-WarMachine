@@ -121,10 +121,13 @@ export default function App() {
   </div>
 
   <div className="profile-section">
-    <div className="avatar-circle">R</div>
+    <div className="avatar-wrapper">
+      <img src="/your-profile-pic.jpg" alt="Avatar" className="avatar-img" />
+      <div className="upload-overlay"><i className="fa-solid fa-pencil"></i></div>
+    </div>
     <div className="profile-info">
       <h4>{username}</h4>
-      <p>Admin</p>
+      <p>Administrator</p>
     </div>
   </div>
 
