@@ -19,14 +19,10 @@ html, body {
 
 /* SIDEBAR */
 .sidebar { 
-  width: 250px;
-  min-width: 250px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: #dce8ff;
-  border-right: 1px solid #cce0ff;
-  padding: 16px;
+  width: 250px; min-width: 250px; height: 100vh; 
+  display: flex; flex-direction: column; 
+  background: #dce8ff; 
+  border-right: 1px solid #cce0ff; padding: 16px; 
 }
 
 .logo-img {
@@ -315,31 +311,31 @@ html, body {
 
 /* Profile Section */
 .profile-section {
-  margin-top: auto;
-  margin-bottom: 15px;
-  padding: 25px 15px; /* Added more vertical breathing room */
+  margin-top: 20px; /* Space from Help Center */
+  margin-bottom: 20px; /* Space from Logout */
+  padding: 15px;      /* Slightly reduced padding to save vertical space */
   background: #cce0ff;
   border-radius: 12px;
   display: flex;
-  flex-direction: column; /* Vertical stacking */
-  align-items: center;    /* Centered alignment */
-  gap: 12px;             /* Spacing between avatar and text */
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;           /* Reduced gap */
 }
 
+/* ADJUST AVATAR SIZE slightly to be more compact */
 .avatar-wrapper {
   position: relative;
-  width: 65px; /* Slightly larger avatar */
-  height: 65px;
+  width: 55px; 
+  height: 55px;
 }
 
 .avatar-img {
-  width: 65px;
-  height: 65px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #2f5cff;
+  border: 2px solid #2f5cff;
 }
-
 .upload-overlay {
   position: absolute;
   bottom: 2px;
