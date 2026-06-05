@@ -1,25 +1,20 @@
-/* CP6 - Full War Machine Layout */
-.app-container { display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; margin: 0; }
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; }
+.app-container { display: flex; height: 100vh; }
+.login-screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.login-screen button { padding: 15px 30px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
 
-/* Sidebar */
-.sidebar { width: 220px; background: #1a1a1a; color: white; display: flex; flex-direction: column; padding: 20px; }
-.sidebar button { margin: 10px 0; background: transparent; border: 1px solid #444; color: white; padding: 12px; cursor: pointer; transition: 0.3s; }
-.sidebar button:hover { background: #333; border-color: #007bff; }
+.sidebar { width: 220px; background: #1a1a1a; color: white; padding: 20px; }
+.sidebar h3 { color: #555; text-transform: uppercase; font-size: 12px; }
+.sidebar button { display: block; width: 100%; margin: 10px 0; background: transparent; border: 1px solid #444; color: white; padding: 12px; cursor: pointer; }
+.sidebar button:hover { background: #333; }
 
-/* Main Content */
-.content { flex: 1; padding: 30px; background: #f4f4f4; overflow-y: auto; }
-
-/* Dashboard Grid & Rows */
+.content { flex: 1; padding: 30px; overflow-y: auto; }
 .dashboard-grid { display: flex; flex-direction: column; gap: 20px; }
 .kpi-row { display: flex; gap: 20px; }
-
-/* KPI Cards */
 .kpi-card { background: white; padding: 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 1; text-align: center; }
-.kpi-card h3 { margin: 0; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-.kpi-card p { margin: 10px 0 0; font-size: 22px; font-weight: bold; color: #333; }
+.kpi-card h3 { margin: 0; font-size: 11px; color: #888; text-transform: uppercase; }
+.kpi-card p { margin: 10px 0 0; font-size: 20px; font-weight: bold; }
 
-/* Leads List */
-.leads-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
 .lead-card { background: white; padding: 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid #007bff; }
-.lead-card h4 { margin: 0 0 5px; color: #222; }
-.lead-card p { margin: 0; font-size: 14px; color: #555; }
+.lead-card h4 { margin: 0 0 5px; }
+.lead-card p { margin: 0; font-size: 14px; color: #666; }
