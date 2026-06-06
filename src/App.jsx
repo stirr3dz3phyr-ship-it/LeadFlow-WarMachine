@@ -12,6 +12,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState("Dashboard");
   const [leads, setLeads] = useState(initialLeads);
   const [newLeadName, setNewLeadName] = useState('');
+  const username = "Ragz";
 
   useEffect(() => { localStorage.setItem('isLoggedIn', isLoggedIn); }, [isLoggedIn]);
 
@@ -45,10 +46,15 @@ export default function App() {
   return (
     <div className="app">
       <aside className="sidebar">
+        <div className="logo-area"><h3>War Machine</h3></div>
         <div className="nav-block">
           {["Dashboard", "Settings", "Help Center"].map((item) => (
             <div key={item} className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} onClick={() => setCurrentView(item)}>{item}</div>
           ))}
+        </div>
+        <div className="profile-section">
+          <h4>{username}</h4>
+          <p>Administrator</p>
         </div>
         <div className="logout" onClick={() => setIsLoggedIn(false)}>Logout</div>
       </aside>
@@ -56,7 +62,7 @@ export default function App() {
       <main className="main">
         {currentView === "Dashboard" && (
           <>
-            <h1>Good Morning 👋</h1>
+            <h1>Good Morning {username} 👋</h1>
             <div className="kpi-row">
               <div className="kpi-card"><h1>{kpis.newLeads}</h1><p>New Leads</p></div>
               <div className="kpi-card"><h1>{kpis.followUpsToday}</h1><p>Follow-ups</p></div>
