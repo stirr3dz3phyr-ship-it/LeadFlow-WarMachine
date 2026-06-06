@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import './styles.css';
 
 const initialLeads = [
   { id: 1, company: "BluePeak Interiors", status: "Hot", priority: "Critical", saleValue: 150000, temperature: "Hot", lastContact: "2026-06-04" },
@@ -8,94 +9,74 @@ const initialLeads = [
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => localStorage.getItem('isLoggedIn') === 'true');
+  const [currentView, setCurrentView] = useState("Dashboard");
   const [leads, setLeads] = useState(initialLeads);
   const [newLeadName, setNewLeadName] = useState('');
 
-  // Save login state persistently
-  React.useEffect(() => {
-    localStorage.setItem('isLoggedIn', isLoggedIn);
-  }, [isLoggedIn]);
+  useEffect(() => { localStorage.setItem('isLoggedIn', isLoggedIn); }, [isLoggedIn]);
 
   const kpis = useMemo(() => ({
     newLeads: leads.filter(l => l.status === 'New Lead').length,
     followUpsToday: leads.filter(l => l.status === 'Follow-up Required').length,
-    rpcReached: leads.filter(l => l.rpc !== undefined && l.rpc !== '').length,
-    noResponse: leads.filter(l => l.status === 'No Response').length,
-    warmHotProspects: leads.filter(l => l.temperature === 'Warm' || l.temperature === 'Hot').length,
-    requestedInfo: leads.filter(l => l.status === 'Requested Info').length,
-    closedSales: leads.filter(l => l.status === 'Closed').length,
     totalRevenue: leads.reduce((sum, l) => sum + (l.saleValue || 0), 0)
-  }), [leads]);
-
-  const sortedLeads = useMemo(() => [...leads].sort((a, b) => {
-    const priorityWeight = { 'Critical': 1, 'High': 2, 'Medium': 3 };
-    return priorityWeight[a.priority] - priorityWeight[b.priority];
   }), [leads]);
 
   const handleAddLead = (e) => {
     e.preventDefault();
     if (!newLeadName.trim()) return;
-    const newLead = {
-      id: Date.now(),
-      company: newLeadName,
-      status: 'New Lead',
-      priority: 'Medium',
-      saleValue: 0,
-      temperature: 'Cold',
-      lastContact: new Date().toISOString().split('T')[0]
-    };
-    setLeads([...leads, newLead]);
+    setLeads([...leads, { id: Date.now(), company: newLeadName, status: 'New Lead', priority: 'Medium', lastContact: new Date().toISOString().split('T')[0] }]);
     setNewLeadName('');
   };
 
   if (!isLoggedIn) {
     return (
-      <div className="login-screen">
-        <h2>War Machine Access</h2>
-        <button onClick={() => setIsLoggedIn(true)}>Authorize Login</button>
+      <div className="login-page">
+        <div className="login-left"><div className="login-overlay"><div className="login-hero"><h1>LeadFlow War Machine</h1><p>Command Center for Strategic Growth</p></div></div></div>
+        <div className="login-right">
+          <div className="login-box">
+            <h2>Welcome Back</h2>
+            <button className="admin-login-btn" onClick={() => setIsLoggedIn(true)}>Authorize Login</button>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="app-container">
-      <nav className="sidebar">
-        <h3>War Machine</h3>
-        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-      </nav>
-      <main className="content">
-        <form onSubmit={handleAddLead} style={{ marginBottom: '20px' }}>
-          <input 
-            value={newLeadName} 
-            onChange={(e) => setNewLeadName(e.target.value)}
-            placeholder="Enter new company name..."
-          />
-          <button type="submit">Add Lead</button>
-        </form>
-
-        <div className="dashboard-grid">
-          <div className="kpi-row">
-            <div className="kpi-card"><h3>New Leads</h3><p>{kpis.newLeads}</p></div>
-            <div className="kpi-card"><h3>Follow-ups</h3><p>{kpis.followUpsToday}</p></div>
-            <div className="kpi-card"><h3>RPC Reached</h3><p>{kpis.rpcReached}</p></div>
-            <div className="kpi-card"><h3>No Response</h3><p>{kpis.noResponse}</p></div>
-          </div>
-          <div className="kpi-row">
-            <div className="kpi-card"><h3>Warm/Hot</h3><p>{kpis.warmHotProspects}</p></div>
-            <div className="kpi-card"><h3>Requested Info</h3><p>{kpis.requestedInfo}</p></div>
-            <div className="kpi-card"><h3>Closed Sales</h3><p>{kpis.closedSales}</p></div>
-            <div className="kpi-card"><h3>Revenue</h3><p>${kpis.totalRevenue.toLocaleString()}</p></div>
-          </div>
-
-          <div className="leads-list">
-            {sortedLeads.map(lead => (
-              <div key={lead.id} className="lead-card">
-                <h4>{lead.company}</h4>
-                <p>Status: {lead.status} | Priority: {lead.priority} | Last Contact: {lead.lastContact}</p>
-              </div>
-            ))}
-          </div>
+    <div className="app">
+      <aside className="sidebar">
+        <div className="nav-block">
+          {["Dashboard", "Settings", "Help Center"].map((item) => (
+            <div key={item} className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} onClick={() => setCurrentView(item)}>{item}</div>
+          ))}
         </div>
+        <div className="logout" onClick={() => setIsLoggedIn(false)}>Logout</div>
+      </aside>
+
+      <main className="main">
+        {currentView === "Dashboard" && (
+          <>
+            <h1>Good Morning 👋</h1>
+            <div className="kpi-row">
+              <div className="kpi-card"><h1>{kpis.newLeads}</h1><p>New Leads</p></div>
+              <div className="kpi-card"><h1>{kpis.followUpsToday}</h1><p>Follow-ups</p></div>
+              <div className="kpi-card"><h1>${kpis.totalRevenue.toLocaleString()}</h1><p>Revenue</p></div>
+            </div>
+            
+            <form onSubmit={handleAddLead} className="workspace">
+              <input value={newLeadName} onChange={(e) => setNewLeadName(e.target.value)} placeholder="New Company Name..." />
+              <button type="submit">Add Lead</button>
+            </form>
+
+            <div className="followup-list">
+              {leads.map(lead => (
+                <div key={lead.id} className="lead-card">
+                  <div className="lead-top"><span>{lead.company}</span><span>{lead.status}</span></div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </main>
     </div>
   );
