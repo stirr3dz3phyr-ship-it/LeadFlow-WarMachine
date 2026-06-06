@@ -11,10 +11,15 @@ export default function App() {
   const [leads, setLeads] = useState(initialLeads);
   const [newLeadName, setNewLeadName] = useState('');
 
+  // Save login state persistently
+  React.useEffect(() => {
+    localStorage.setItem('isLoggedIn', isLoggedIn);
+  }, [isLoggedIn]);
+
   const kpis = useMemo(() => ({
     newLeads: leads.filter(l => l.status === 'New Lead').length,
     followUpsToday: leads.filter(l => l.status === 'Follow-up Required').length,
-    rpcReached: leads.filter(l => l.rpc !== undefined).length,
+    rpcReached: leads.filter(l => l.rpc !== undefined && l.rpc !== '').length,
     noResponse: leads.filter(l => l.status === 'No Response').length,
     warmHotProspects: leads.filter(l => l.temperature === 'Warm' || l.temperature === 'Hot').length,
     requestedInfo: leads.filter(l => l.status === 'Requested Info').length,
@@ -29,7 +34,7 @@ export default function App() {
 
   const handleAddLead = (e) => {
     e.preventDefault();
-    if (!newLeadName) return;
+    if (!newLeadName.trim()) return;
     const newLead = {
       id: Date.now(),
       company: newLeadName,
@@ -59,7 +64,6 @@ export default function App() {
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       </nav>
       <main className="content">
-        {/* ADD LEAD FORM */}
         <form onSubmit={handleAddLead} style={{ marginBottom: '20px' }}>
           <input 
             value={newLeadName} 
@@ -70,7 +74,19 @@ export default function App() {
         </form>
 
         <div className="dashboard-grid">
-          {/* ... Your existing KPI rows ... */}
+          <div className="kpi-row">
+            <div className="kpi-card"><h3>New Leads</h3><p>{kpis.newLeads}</p></div>
+            <div className="kpi-card"><h3>Follow-ups</h3><p>{kpis.followUpsToday}</p></div>
+            <div className="kpi-card"><h3>RPC Reached</h3><p>{kpis.rpcReached}</p></div>
+            <div className="kpi-card"><h3>No Response</h3><p>{kpis.noResponse}</p></div>
+          </div>
+          <div className="kpi-row">
+            <div className="kpi-card"><h3>Warm/Hot</h3><p>{kpis.warmHotProspects}</p></div>
+            <div className="kpi-card"><h3>Requested Info</h3><p>{kpis.requestedInfo}</p></div>
+            <div className="kpi-card"><h3>Closed Sales</h3><p>{kpis.closedSales}</p></div>
+            <div className="kpi-card"><h3>Revenue</h3><p>${kpis.totalRevenue.toLocaleString()}</p></div>
+          </div>
+
           <div className="leads-list">
             {sortedLeads.map(lead => (
               <div key={lead.id} className="lead-card">
