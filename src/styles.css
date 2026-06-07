@@ -2,22 +2,24 @@
 html, body { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', sans-serif; background: slategray; }
 .app { display: flex; width: 100vw; height: 100vh; overflow: hidden; }
 
-/* SIDEBAR - Checkpoint 5 spec */
+/* SIDEBAR */
 .sidebar { width: 250px; height: 100vh; display: flex; flex-direction: column; background: #dce8ff; padding: 20px; }
+.sidebar h3 { color: #2f5cff; margin-bottom: 20px; }
 .nav-item { padding: 10px; cursor: pointer; color: #384152; border-radius: 8px; }
 .nav-item-active { background: #cce0ff !important; color: #2f5cff; font-weight: 600; border-left: 4px solid #2f5cff; }
 .logout { margin-top: auto; padding: 10px; text-align: center; background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; }
 
-/* MAIN - Checkpoint 5 spec */
+/* MAIN AREA */
 .main { flex: 1; padding: 30px; overflow-y: auto; background: slategray; }
-h1 { color: white; }
+h1 { color: white; margin-top: 0; }
 
-/* KPI CARDS - Checkpoint 5 spec */
+/* KPI CARDS */
 .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
 .kpi-card { background: #dce8ff; border-radius: 14px; padding: 20px; text-align: center; border: 1px solid #cce0ff; }
 .kpi-card h1 { color: #2f5cff; margin: 0; font-size: 24px; }
 .kpi-card p { color: #384152; font-weight: 600; font-size: 14px; }
 
-/* WORKSPACE - Checkpoint 5 spec */
-.lead-card { background: #dce8ff; padding: 16px; border-radius: 10px; font-weight: bold; }
-.lead-top { display: flex; justify-content: space-between; }
+/* WORKSPACE & LIST */
+.workspace { background: #dce8ff; padding: 15px; border-radius: 14px; margin-bottom: 20px; border: 1px solid #cce0ff; }
+.lead-card { background: #dce8ff; border-radius: 10px; padding: 16px; margin-bottom: 10px; font-weight: bold; color: #384152; border: 1px solid #cce0ff; }
+.lead-top { display: flex; justify-content: space-between; align-items: center; }
