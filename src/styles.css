@@ -1,461 +1,276 @@
-import React, { useState, useEffect } from 'react';
-import './styles.css';
-
-export default function App() {
-  // AUTH
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    () => localStorage.getItem('isLoggedIn') === 'true'
-  );
-
-  // LEADS
-  const [leads, setLeads] = useState(() => {
-    const saved = localStorage.getItem(
-      'warMachineLeads'
-    );
-
-    return saved
-      ? JSON.parse(saved)
-      : [
-          {
-            id: 1,
-            company: 'BluePeak Interiors',
-            contact: 'Michael Scott',
-            phone: '+91 9876543210',
-            email: 'michael@bluepeak.com',
-            revenue: 75000,
-            status: 'Hot',
-            lastUpdated:
-              new Date().toLocaleDateString()
-          },
-          {
-            id: 2,
-            company: 'Urban Nest Builders',
-            contact: 'Sarah Johnson',
-            phone: '+91 9123456789',
-            email: 'sarah@urbannest.com',
-            revenue: 45000,
-            status:
-              'Follow-up Required',
-            lastUpdated:
-              new Date().toLocaleDateString()
-          },
-          {
-            id: 3,
-            company: 'Apex Solutions',
-            contact: 'Daniel Cooper',
-            phone: '+91 9988776655',
-            email: 'daniel@apex.com',
-            revenue: 115000,
-            status: 'New Lead',
-            lastUpdated:
-              new Date().toLocaleDateString()
-          }
-        ];
-  });
-
-  // FORM
-  const [newLead, setNewLead] =
-    useState({
-      company: '',
-      contact: '',
-      phone: '',
-      email: '',
-      revenue: '',
-      status: 'New Lead'
-    });
-
-  // SAVE AUTH
-  useEffect(() => {
-    localStorage.setItem(
-      'isLoggedIn',
-      isLoggedIn
-    );
-  }, [isLoggedIn]);
-
-  // SAVE LEADS
-  useEffect(() => {
-    localStorage.setItem(
-      'warMachineLeads',
-      JSON.stringify(leads)
-    );
-  }, [leads]);
-
-  // KPI
-  const newLeadsCount =
-    leads.filter(
-      lead =>
-        lead.status ===
-        'New Lead'
-    ).length;
-
-  const followUpsCount =
-    leads.filter(
-      lead =>
-        lead.status ===
-        'Follow-up Required'
-    ).length;
-
-  const totalRevenue =
-    leads.reduce(
-      (sum, lead) =>
-        sum +
-        Number(
-          lead.revenue || 0
-        ),
-      0
-    );
-
-  // ADD LEAD
-  const handleAddLead = e => {
-    e.preventDefault();
-
-    if (
-      !newLead.company.trim()
-    )
-      return;
-
-    const leadToAdd = {
-      id: Date.now(),
-      ...newLead,
-      revenue: Number(
-        newLead.revenue || 0
-      ),
-      lastUpdated:
-        new Date().toLocaleDateString()
-    };
-
-    setLeads([
-      leadToAdd,
-      ...leads
-    ]);
-
-    setNewLead({
-      company: '',
-      contact: '',
-      phone: '',
-      email: '',
-      revenue: '',
-      status: 'New Lead'
-    });
-  };
-
-  // LOGIN
-  if (!isLoggedIn) {
-    return (
-      <div className="login-page">
-        <div className="login-box">
-          <h2>
-            War Machine Access
-          </h2>
-
-          <button
-            className="login-btn"
-            onClick={() =>
-              setIsLoggedIn(true)
-            }
-          >
-            Authorize Login
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="app">
-      {/* SIDEBAR */}
-      <aside className="sidebar">
-        <h3>War Machine</h3>
-
-        <div className="nav-block">
-          <div className="nav-item nav-item-active">
-            Dashboard
-          </div>
-
-          <div className="nav-item">
-            Settings
-          </div>
-
-          <div className="nav-item">
-            Help Center
-          </div>
-        </div>
-
-        <div
-          className="logout"
-          onClick={() =>
-            setIsLoggedIn(false)
-          }
-        >
-          Logout
-        </div>
-      </aside>
-
-      {/* MAIN */}
-      <main className="main">
-        <h1>
-          Good Morning Ragz 👋
-        </h1>
-
-        {/* KPI */}
-        <div className="kpi-row">
-          <div className="kpi-card">
-            <h2>
-              {newLeadsCount}
-            </h2>
-            <p>
-              New Leads
-            </p>
-          </div>
-
-          <div className="kpi-card">
-            <h2>
-              {followUpsCount}
-            </h2>
-            <p>
-              Follow-ups
-            </p>
-          </div>
-
-          <div className="kpi-card">
-            <h2>
-              $
-              {totalRevenue.toLocaleString()}
-            </h2>
-            <p>
-              Revenue
-            </p>
-          </div>
-        </div>
-
-        {/* FORM */}
-        <div className="workspace">
-          <h3>Add Lead</h3>
-
-          <form
-            className="lead-form"
-            onSubmit={
-              handleAddLead
-            }
-          >
-            <input
-              placeholder="Company"
-              value={
-                newLead.company
-              }
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  company:
-                    e.target.value
-                })
-              }
-            />
-
-            <input
-              placeholder="Contact"
-              value={
-                newLead.contact
-              }
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  contact:
-                    e.target.value
-                })
-              }
-            />
-
-            <input
-              placeholder="Phone"
-              value={
-                newLead.phone
-              }
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  phone:
-                    e.target.value
-                })
-              }
-            />
-
-            <input
-              placeholder="Email"
-              value={
-                newLead.email
-              }
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  email:
-                    e.target.value
-                })
-              }
-            />
-
-            <input
-              type="number"
-              placeholder="Revenue"
-              value={
-                newLead.revenue
-              }
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  revenue:
-                    e.target.value
-                })
-              }
-            />
-
-            <select
-              value={
-                newLead.status
-              }
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  status:
-                    e.target.value
-                })
-              }
-            >
-              <option>
-                New Lead
-              </option>
-              <option>
-                Hot
-              </option>
-              <option>
-                Follow-up Required
-              </option>
-            </select>
-
-            <button type="submit">
-              Add Lead
-            </button>
-          </form>
-        </div>
-
-        {/* LEADS */}
-        <div className="followup-list">
-          {leads.map(
-            lead => (
-              <div
-                key={lead.id}
-                className="lead-card"
-              >
-                <div className="lead-top">
-                  <h4>
-                    {
-                      lead.company
-                    }
-                  </h4>
-
-                  <span
-                    className={`status-badge ${lead.status
-                      .replace(
-                        /\s+/g,
-                        '-'
-                      )
-                      .toLowerCase()}`}
-                  >
-                    {
-                      lead.status
-                    }
-                  </span>
-                </div>
-
-                <p>
-                  <strong>
-                    Contact:
-                  </strong>{' '}
-                  {
-                    lead.contact
-                  }
-                </p>
-
-                <p>
-                  <strong>
-                    Phone:
-                  </strong>{' '}
-                  {
-                    lead.phone
-                  }
-                </p>
-
-                <p>
-                  <strong>
-                    Email:
-                  </strong>{' '}
-                  {
-                    lead.email
-                  }
-                </p>
-
-                <p>
-                  <strong>
-                    Revenue:
-                  </strong>{' '}
-                  $
-                  {
-                    lead.revenue
-                  }
-                </p>
-
-                <p>
-                  <strong>
-                    Updated:
-                  </strong>{' '}
-                  {
-                    lead.lastUpdated
-                  }
-                </p>
-              </div>
-            )
-          )}
-        </div>
-      </main>
-    </div>
-  );
+* {
+  box-sizing: border-box;
 }
-                          className={`status-badge ${lead.status
-                    .replace(/\s+/g, '-')
-                    .toLowerCase()}`}
-                >
-                  {lead.status}
-                </span>
-              </div>
 
-              <p>
-                <strong>Contact:</strong>{' '}
-                {lead.contact}
-              </p>
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: slategray;
+}
 
-              <p>
-                <strong>Phone:</strong>{' '}
-                {lead.phone}
-              </p>
+/* APP */
 
-              <p>
-                <strong>Email:</strong>{' '}
-                {lead.email}
-              </p>
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
-              <p>
-                <strong>Revenue:</strong> $
-                {lead.revenue}
-              </p>
+/* SIDEBAR */
 
-              <p>
-                <strong>Updated:</strong>{' '}
-                {lead.lastUpdated}
-              </p>
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
-  );
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  background: #dce8ff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid #cce0ff;
+}
+
+.sidebar h3 {
+  color: #2f5cff;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #384152;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #cce0ff;
+}
+
+.nav-item-active {
+  background: #cce0ff;
+  color: #2f5cff;
+  font-weight: 700;
+  border-left: 4px solid #2f5cff;
+}
+
+.logout {
+  margin-top: auto;
+  background: #2f5cff;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.logout:hover {
+  transform: translateY(-1px);
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 30px;
+  background: slategray;
+}
+
+.main h1 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* LOGIN */
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: slategray;
+}
+
+.login-box {
+  background: #dce8ff;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  min-width: 340px;
+}
+
+.login-box h2 {
+  color: #2f5cff;
+  margin-bottom: 20px;
+}
+
+.login-btn {
+  background: #2f5cff;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  opacity: 0.95;
+}
+
+/* KPI */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: #dce8ff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid #cce0ff;
+}
+
+.kpi-card h2 {
+  color: #2f5cff;
+  margin: 0;
+  font-size: 28px;
+}
+
+.kpi-card p {
+  margin-top: 10px;
+  color: #384152;
+  font-weight: 600;
+}
+
+/* WORKSPACE */
+
+.workspace {
+  background: #dce8ff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #cce0ff;
+}
+
+.workspace h3 {
+  color: #2f5cff;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.lead-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.lead-form input,
+.lead-form select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #cce0ff;
+  outline: none;
+  font-size: 14px;
+}
+
+.lead-form input:focus,
+.lead-form select:focus {
+  border-color: #2f5cff;
+}
+
+.lead-form button {
+  background: #2f5cff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 48px;
+}
+
+.lead-form button:hover {
+  opacity: 0.95;
+}
+
+/* LEADS */
+
+.followup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lead-card {
+  background: #dce8ff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #cce0ff;
+}
+
+.lead-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.lead-top h4 {
+  margin: 0;
+  color: #384152;
+}
+
+.lead-card p {
+  margin: 8px 0;
+  color: #384152;
+}
+
+/* STATUS BADGES */
+
+.status-badge {
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hot {
+  background: #ffd6d6;
+  color: #c40000;
+}
+
+.follow-up-required {
+  background: #fff2bf;
+  color: #9c7200;
+}
+
+.new-lead {
+  background: #d9ebff;
+  color: #0056b3;
 }
