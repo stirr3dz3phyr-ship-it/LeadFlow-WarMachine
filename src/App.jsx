@@ -46,7 +46,6 @@ export default function App() {
   return (
     <div className="app">
       <aside className="sidebar">
-        <div className="logo-area"><h3>War Machine</h3></div>
         <div className="nav-block">
           {["Dashboard", "Settings", "Help Center"].map((item) => (
             <div key={item} className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} onClick={() => setCurrentView(item)}>{item}</div>
@@ -69,7 +68,7 @@ export default function App() {
               <div className="kpi-card"><h1>${kpis.totalRevenue.toLocaleString()}</h1><p>Revenue</p></div>
             </div>
             
-            <form onSubmit={handleAddLead} className="workspace">
+            <form onSubmit={handleAddLead} className="workspace" style={{display: 'flex', gap: '10px'}}>
               <input value={newLeadName} onChange={(e) => setNewLeadName(e.target.value)} placeholder="New Company Name..." />
               <button type="submit">Add Lead</button>
             </form>
