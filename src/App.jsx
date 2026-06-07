@@ -28,37 +28,39 @@ export default function App() {
     setNewLeadName('');
   };
 
+  if (!isLoggedIn) {
+    return (
+      <div className="login-page">
+        <div className="login-box">
+          <h2>War Machine Access</h2>
+          <button className="admin-login-btn" onClick={() => setIsLoggedIn(true)}>Authorize Login</button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <aside className="sidebar">
         <h3>War Machine</h3>
         <div className="nav-block">
           {["Dashboard", "Settings", "Help Center"].map((item) => (
-            <div 
-              key={item} 
-              className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} 
-              onClick={() => setCurrentView(item)}
-            >
+            <div key={item} className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} onClick={() => setCurrentView(item)}>
               {item}
             </div>
           ))}
-        </div>
-        <div className="profile-section">
-          <h4>Ragz</h4>
-          <p>Administrator</p>
         </div>
         <div className="logout" onClick={() => setIsLoggedIn(false)}>Logout</div>
       </aside>
 
       <main className="main">
         <h1>Good Morning Ragz 👋</h1>
-        
         <div className="kpi-row">
           <div className="kpi-card"><h1>{kpis.newLeads}</h1><p>New Leads</p></div>
           <div className="kpi-card"><h1>{kpis.followUpsToday}</h1><p>Follow-ups</p></div>
           <div className="kpi-card"><h1>${kpis.totalRevenue.toLocaleString()}</h1><p>Revenue</p></div>
         </div>
-
+        
         <div className="workspace">
           <form onSubmit={handleAddLead} style={{ display: 'flex', gap: '10px' }}>
             <input value={newLeadName} onChange={(e) => setNewLeadName(e.target.value)} placeholder="New Company Name..." />
