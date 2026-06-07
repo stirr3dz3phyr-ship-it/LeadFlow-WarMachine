@@ -12,6 +12,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState("Dashboard");
   const [leads, setLeads] = useState(initialLeads);
   const [newLeadName, setNewLeadName] = useState('');
+  const username = "Ragz";
 
   useEffect(() => { localStorage.setItem('isLoggedIn', isLoggedIn); }, [isLoggedIn]);
 
@@ -46,7 +47,13 @@ export default function App() {
       <aside className="sidebar">
         <div className="nav-block">
           {["Dashboard", "Settings", "Help Center"].map((item) => (
-            <div key={item} className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} onClick={() => setCurrentView(item)}>{item}</div>
+            <div 
+              key={item} 
+              className={`nav-item ${currentView === item ? "nav-item-active" : ""}`} 
+              onClick={() => setCurrentView(item)}
+            >
+              {item}
+            </div>
           ))}
         </div>
         <div className="logout" onClick={() => setIsLoggedIn(false)}>Logout</div>
