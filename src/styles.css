@@ -1,25 +1,187 @@
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', sans-serif; background: slategray; }
-.app { display: flex; width: 100vw; height: 100vh; overflow: hidden; }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: slategray;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
 
 /* SIDEBAR */
-.sidebar { width: 250px; height: 100vh; display: flex; flex-direction: column; background: #dce8ff; padding: 20px; }
-.sidebar h3 { color: #2f5cff; margin-bottom: 20px; }
-.nav-item { padding: 10px; cursor: pointer; color: #384152; border-radius: 8px; }
-.nav-item-active { background: #cce0ff !important; color: #2f5cff; font-weight: 600; border-left: 4px solid #2f5cff; }
-.logout { margin-top: auto; padding: 10px; text-align: center; background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; }
 
-/* MAIN AREA */
-.main { flex: 1; padding: 30px; overflow-y: auto; background: slategray; }
-h1 { color: white; margin-top: 0; }
+.sidebar {
+  width: 250px;
+  background: #dce8ff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
-/* KPI CARDS */
-.kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
-.kpi-card { background: #dce8ff; border-radius: 14px; padding: 20px; text-align: center; border: 1px solid #cce0ff; }
-.kpi-card h1 { color: #2f5cff; margin: 0; font-size: 24px; }
-.kpi-card p { color: #384152; font-weight: 600; font-size: 14px; }
+.sidebar h3 {
+  color: #2f5cff;
+}
 
-/* WORKSPACE & LIST */
-.workspace { background: #dce8ff; padding: 15px; border-radius: 14px; margin-bottom: 20px; border: 1px solid #cce0ff; }
-.lead-card { background: #dce8ff; border-radius: 10px; padding: 16px; margin-bottom: 10px; font-weight: bold; color: #384152; border: 1px solid #cce0ff; }
-.lead-top { display: flex; justify-content: space-between; align-items: center; }
+.nav-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-item {
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav-item-active {
+  background: #cce0ff;
+  color: #2f5cff;
+  font-weight: 600;
+}
+
+.logout {
+  margin-top: auto;
+  background: #2f5cff;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.main h1 {
+  color: white;
+}
+
+/* LOGIN */
+
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: slategray;
+}
+
+.login-box {
+  background: #dce8ff;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.login-btn {
+  background: #2f5cff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* KPI */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: #dce8ff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.kpi-card h1 {
+  color: #2f5cff;
+  margin: 0;
+}
+
+/* WORKSPACE */
+
+.workspace {
+  background: #dce8ff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.lead-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.lead-form input,
+.lead-form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.lead-form button {
+  background: #2f5cff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* LEADS */
+
+.followup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-card {
+  background: #dce8ff;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.lead-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hot {
+  background: #ffcccc;
+}
+
+.follow-up-required {
+  background: #fff1b8;
+}
+
+.new-lead {
+  background: #d6e8ff;
+}
