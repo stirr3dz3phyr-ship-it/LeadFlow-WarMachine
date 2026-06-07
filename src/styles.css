@@ -1,23 +1,26 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: slategray; }
-.app { display: flex; width: 100vw; height: 100vh; overflow: hidden; background: transparent; }
+
+.app { display: flex; width: 100vw; height: 100vh; overflow: hidden; }
 
 /* SIDEBAR */
-.sidebar { width: 250px; min-width: 250px; height: 100vh; display: flex; flex-direction: column; background: #dce8ff; border-right: 1px solid #cce0ff; padding: 16px; }
+.sidebar { width: 250px; height: 100vh; display: flex; flex-direction: column; background: #dce8ff; padding: 20px; }
 .nav-block { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.nav-item { padding: 10px; border-radius: 8px; cursor: pointer; color: #384152; transition: all 0.3s ease-in-out; }
-.nav-item:hover { background: #cce0ff; transform: translateX(5px); }
-.nav-item-active { background: #cce0ff !important; color: #2f5cff; font-weight: 600; border-left: 4px solid #2f5cff; border-radius: 0 8px 8px 0; }
+.nav-item { padding: 10px; border-radius: 8px; cursor: pointer; color: #384152; }
+.nav-item-active { background: #cce0ff !important; color: #2f5cff; font-weight: 600; border-left: 4px solid #2f5cff; }
 .logout { margin-top: auto; padding: 10px; text-align: center; background: #2f5cff; color: white; border-radius: 10px; cursor: pointer; }
 
 /* MAIN AREA */
 .main { flex: 1; padding: 24px; overflow-y: auto; background: slategray; }
-.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-.kpi-card { background: #dce8ff; border-radius: 14px; padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #cce0ff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.kpi-card h1 { margin: 0; font-size: 24px; color: #2f5cff; }
-.kpi-card p { margin: 5px 0 0 0; font-size: 13px; font-weight: 600; color: #384152; }
+h1 { color: white; }
 
-/* WORKSPACE */
-.workspace { background: #dce8ff; border: 1px solid #cce0ff; border-radius: 14px; padding: 20px; margin-bottom: 24px; }
-.lead-card { background: #dce8ff; border: 1px solid #cce0ff; border-radius: 10px; padding: 16px; margin-bottom: 10px; }
-.lead-top { display: flex; justify-content: space-between; font-weight: bold; }
+/* KPI CARDS */
+.kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.kpi-card { background: #dce8ff; border-radius: 14px; padding: 20px; text-align: center; }
+.kpi-card h1 { color: #2f5cff; margin: 0; }
+.kpi-card p { margin: 5px 0 0; color: #384152; font-weight: 600; }
+
+/* WORKSPACE & LIST */
+.workspace { background: #dce8ff; padding: 20px; border-radius: 14px; margin-bottom: 20px; }
+.lead-card { background: #dce8ff; border-radius: 10px; padding: 16px; margin-bottom: 10px; font-weight: bold; }
+.lead-top { display: flex; justify-content: space-between; }
