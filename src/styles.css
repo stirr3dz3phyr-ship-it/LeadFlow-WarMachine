@@ -274,3 +274,23 @@ body,
   background: #d9ebff;
   color: #0056b3;
 }
+
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2f5cff;
+  color: white;
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-overlay {
+  text-align: center;
+}
