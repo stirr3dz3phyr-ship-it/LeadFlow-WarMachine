@@ -1,294 +1,104 @@
-import React, { useState, useEffect } from 'react';
-import './styles.css';
+import React, { useState } from "react";
+import "./styles.css";
+
+// Importing the modular components
+import Sidebar from "./components/Sidebar";
+import KPIGrid from "./components/KPIGrid";
+import LeadForm from "./components/LeadForm";
+import LeadList from "./components/LeadList";
 
 export default function App() {
-  // AUTH
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    () => localStorage.getItem('isLoggedIn') === 'true'
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentView, setCurrentView] = useState("Dashboard");
+  const username = "Ragz";
 
-  // LEADS
-  const [leads, setLeads] = useState(() => {
-    const savedLeads = localStorage.getItem('warMachineLeads');
+  // Data constants
+  const kpiData = [
+    { value: "47", label: "New Leads - Untouched" },
+    { value: "16", label: "Follow-ups Today" },
+    { value: "9", label: "RPCs Reached" },
+    { value: "13", label: "Unreachable / RNR Leads" }
+  ];
 
-    return savedLeads
-      ? JSON.parse(savedLeads)
-      : [
-          {
-            id: 1,
-            company: 'BluePeak Interiors',
-            contact: 'Michael Scott',
-            phone: '+91 9876543210',
-            email: 'michael@bluepeak.com',
-            revenue: 75000,
-            status: 'Hot',
-            lastUpdated: new Date().toLocaleDateString()
-          },
-          {
-            id: 2,
-            company: 'Urban Nest Builders',
-            contact: 'Sarah Johnson',
-            phone: '+91 9123456789',
-            email: 'sarah@urbannest.com',
-            revenue: 45000,
-            status: 'Follow-up Required',
-            lastUpdated: new Date().toLocaleDateString()
-          },
-          {
-            id: 3,
-            company: 'Apex Solutions',
-            contact: 'Daniel Cooper',
-            phone: '+91 9988776655',
-            email: 'daniel@apex.com',
-            revenue: 115000,
-            status: 'New Lead',
-            lastUpdated: new Date().toLocaleDateString()
-          }
-        ];
-  });
+  const leadsData = [
+    { name: "BluePeak Interiors", rpc: "RPC: Arjun Mehta", info: "Last Contact: 2 Days Ago | Status: Interested | Priority: Warm" },
+    { name: "Urban Nest Builders", rpc: "RPC: Priya Sharma", info: "Last Contact: 1 Day Ago | Status: Follow-up | Priority: Hot" }
+  ];
 
-  // NEW LEAD FORM
-  const [newLead, setNewLead] = useState({
-    company: '',
-    contact: '',
-    phone: '',
-    email: '',
-    revenue: '',
-    status: 'New Lead'
-  });
-
-  // SAVE AUTH
-  useEffect(() => {
-    localStorage.setItem('isLoggedIn', isLoggedIn);
-  }, [isLoggedIn]);
-
-  // SAVE LEADS
-  useEffect(() => {
-    localStorage.setItem(
-      'warMachineLeads',
-      JSON.stringify(leads)
-    );
-  }, [leads]);
-
-  // KPI CALCULATIONS
-  const newLeadsCount = leads.filter(
-    lead => lead.status === 'New Lead'
-  ).length;
-
-  const followUpsCount = leads.filter(
-    lead => lead.status === 'Follow-up Required'
-  ).length;
-
-  const totalRevenue = leads.reduce(
-    (sum, lead) => sum + Number(lead.revenue || 0),
-    0
-  );
-
-  // ADD LEAD
-  const handleAddLead = e => {
-    e.preventDefault();
-
-    if (!newLead.company.trim()) return;
-
-    const leadToAdd = {
-      id: Date.now(),
-      ...newLead,
-      revenue: Number(newLead.revenue || 0),
-      lastUpdated: new Date().toLocaleDateString()
-    };
-
-    setLeads([leadToAdd, ...leads]);
-
-    setNewLead({
-      company: '',
-      contact: '',
-      phone: '',
-      email: '',
-      revenue: '',
-      status: 'New Lead'
-    });
-  };
-
-  // LOGIN SCREEN
+  // --- LOGIN VIEW ---
   if (!isLoggedIn) {
     return (
       <div className="login-page">
-        <div className="login-box">
-          <h2>War Machine Access</h2>
-
-          <button
-            className="login-btn"
-            onClick={() => setIsLoggedIn(true)}
-          >
-            Authorize Login
-          </button>
+        <div className="login-left">
+          <div className="login-overlay">
+            <div className="login-hero">
+              <h1>LeadFlow War Machine</h1>
+              <p>Command Center for Strategic Growth</p>
+            </div>
+          </div>
+        </div>
+        <div className="login-right">
+          <div className="login-box">
+            <img src="/logo.png" alt="Logo" className="login-logo" />
+            <h2>Welcome Back</h2>
+            <input type="text" placeholder="Username" className="login-input" />
+            <input type="password" placeholder="Password" className="login-input" />
+            <button className="user-login-btn" onClick={() => setIsLoggedIn(true)}>User Login</button>
+            <button className="admin-login-btn" onClick={() => setIsLoggedIn(true)}>Admin Login</button>
+          </div>
         </div>
       </div>
     );
   }
 
+  // --- MAIN APP VIEWS ---
   return (
     <div className="app">
-      <aside className="sidebar">
-        <h3>War Machine</h3>
-
-        <div className="nav-block">
-          <div className="nav-item nav-item-active">
-            Dashboard
-          </div>
-
-          <div className="nav-item">
-            Settings
-          </div>
-
-          <div className="nav-item">
-            Help Center
-          </div>
-        </div>
-
-        <div
-          className="logout"
-          onClick={() => setIsLoggedIn(false)}
-        >
-          Logout
-        </div>
-      </aside>
-
+      <Sidebar 
+        currentView={currentView} 
+        setCurrentView={setCurrentView} 
+        setIsLoggedIn={setIsLoggedIn} 
+        username={username} 
+      />
+      
       <main className="main">
-        <h1>Good Morning Ragz 👋</h1>
+        {currentView === "Dashboard" && (
+          <>
+            <h1>Good Morning {username} 👋</h1>
+            <KPIGrid kpis={kpiData} />
+            <LeadForm />
+            <LeadList leads={leadsData} />
+            <KPIGrid kpis={[
+              { value: "12", label: "Warm / Hot Prospects" },
+              { value: "6", label: "RFI Follow-ups" },
+              { value: "3 | $2.4K", label: "Closed Sales" },
+              { value: "$3.6K", label: "Target Remaining", special: true }
+            ]} />
+          </>
+        )}
 
-        {/* KPI */}
-        <div className="kpi-row">
-          <div className="kpi-card">
-            <h1>{newLeadsCount}</h1>
-            <p>New Leads</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>{followUpsCount}</h1>
-            <p>Follow-ups</p>
-          </div>
-
-          <div className="kpi-card">
-            <h1>
-              $
-              {totalRevenue.toLocaleString()}
-            </h1>
-            <p>Revenue</p>
-          </div>
-        </div>
-
-        {/* ADD LEAD */}
-        <div className="workspace">
-          <h3>Add Lead</h3>
-
-          <form
-            className="lead-form"
-            onSubmit={handleAddLead}
-          >
-            <input
-              placeholder="Company"
-              value={newLead.company}
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  company: e.target.value
-                })
-              }
-            />
-
-            <input
-              placeholder="Contact"
-              value={newLead.contact}
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  contact: e.target.value
-                })
-              }
-            />
-
-            <input
-              placeholder="Phone"
-              value={newLead.phone}
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  phone: e.target.value
-                })
-              }
-            />
-
-            <input
-              placeholder="Email"
-              value={newLead.email}
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  email: e.target.value
-                })
-              }
-            />
-
-            <input
-              type="number"
-              placeholder="Revenue"
-              value={newLead.revenue}
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  revenue: e.target.value
-                })
-              }
-            />
-
-            <select
-              value={newLead.status}
-              onChange={e =>
-                setNewLead({
-                  ...newLead,
-                  status: e.target.value
-                })
-              }
-            >
-              <option>New Lead</option>
-              <option>Hot</option>
-              <option>Follow-up Required</option>
-            </select>
-
-            <button type="submit">
-              Add Lead
-            </button>
-          </form>
-        </div>
-
-        {/* LEADS */}
-        <div className="followup-list">
-          {leads.map(lead => (
-            <div
-              key={lead.id}
-              className="lead-card"
-            >
-              <div className="lead-top">
-                <h4>{lead.company}</h4>
-
-                <span
-                  className={`status-badge ${lead.status
-                    .replace(/\s+/g, '-')
-                    .toLowerCase()}`}
-                >
-                  {lead.status}
-                </span>
-              </div>
-
-              <p><strong>Contact:</strong> {lead.contact}</p>
-              <p><strong>Phone:</strong> {lead.phone}</p>
-              <p><strong>Email:</strong> {lead.email}</p>
-              <p><strong>Revenue:</strong> ${lead.revenue}</p>
-              <p><strong>Updated:</strong> {lead.lastUpdated}</p>
+        {currentView === "Settings" && (
+          <div className="workspace">
+            <h2>System Settings</h2>
+            <div className="settings-grid">
+              <div className="setting-card"><h3>Role Management</h3><p>Manage Admin/User permissions.</p></div>
+              <div className="setting-card"><h3>Data Rules</h3><p>Configure duplicate detection.</p></div>
+              <div className="setting-card"><h3>API Integrations</h3><p>Configure external keys.</p></div>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+
+        {currentView === "Help Center" && (
+          <div className="workspace">
+            <h2>Help Center</h2>
+            <div className="help-box">
+              <h3>Best Routines</h3>
+              <ul><li>Always format Excel phone columns as "Text".</li><li>Check the "Conflicts" tab before finalizing uploads.</li></ul>
+              <h3>System Rules</h3>
+              <p>Your actions are logged for accountability.</p>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
