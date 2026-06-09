@@ -53,14 +53,12 @@ export default function App() {
   }
 
   // --- MAIN APP VIEWS ---
-  return (
+return (
     <div className="app">
-      <Sidebar 
-        currentView={currentView} 
-        setCurrentView={setCurrentView} 
-        setIsLoggedIn={setIsLoggedIn} 
-        username={username} 
-      />
+      <h1>Dashboard test</h1>
+      <button onClick={() => setIsLoggedIn(false)}>Back to Login</button>
+    </div>
+  );
       
       <main className="main">
         {currentView === "Dashboard" && (
