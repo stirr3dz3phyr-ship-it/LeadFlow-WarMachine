@@ -7,7 +7,7 @@ import LeadForm from "./components/LeadForm";
 import LeadList from "./components/LeadList";
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [currentView, setCurrentView] = useState("Dashboard");
   const username = "Ragz";
 
