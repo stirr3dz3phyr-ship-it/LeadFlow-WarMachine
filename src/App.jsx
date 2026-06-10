@@ -1,7 +1,11 @@
 // src/App.jsx
+// src/App.jsx
 import React, { useState } from "react";
 import { initialLeads } from "./data";
-import Sidebar from "./components/Sidebar"; // Using your existing component
+import Sidebar from "./components/Sidebar";
+import KPIGrid from "./components/KPIGrid";
+import LeadForm from "./components/LeadForm";
+import LeadList from "./components/LeadList";; // Using your existing component
 // Import your other components here
 
 export default function App() {
